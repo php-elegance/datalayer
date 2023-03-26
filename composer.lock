@@ -1,0 +1,169 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "128481cfb15908c9a89e99f87b474397",
+    "packages": [
+        {
+            "name": "elegance/cifcode",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elegance-php/cifcode.git",
+                "reference": "916b3548f1fd5f930b0d851f21b413a4a2174372"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elegance-php/cifcode/zipball/916b3548f1fd5f930b0d851f21b413a4a2174372",
+                "reference": "916b3548f1fd5f930b0d851f21b413a4a2174372",
+                "shasum": ""
+            },
+            "require": {
+                "elegance/core": "dev-main",
+                "elegance/mxcmd": "dev-main"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "helper/script/env.php"
+                ],
+                "psr-4": {
+                    "": "class/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "André Ricardo",
+                    "email": "contatoadmx@gamil.com"
+                }
+            ],
+            "description": "Aplica camada de cifra e codificação",
+            "support": {
+                "issues": "https://github.com/elegance-php/cifcode/issues",
+                "source": "https://github.com/elegance-php/cifcode/tree/main"
+            },
+            "time": "2023-03-26T22:30:10+00:00"
+        },
+        {
+            "name": "elegance/core",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elegance-php/core.git",
+                "reference": "4e3837c78fed56bb7648d7e0ef3374ea2d964529"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elegance-php/core/zipball/4e3837c78fed56bb7648d7e0ef3374ea2d964529",
+                "reference": "4e3837c78fed56bb7648d7e0ef3374ea2d964529",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": "^8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "helper/constant/char_normalizer.php",
+                    "helper/function/dbug.php",
+                    "helper/function/env.php",
+                    "helper/function/is.php",
+                    "helper/function/jsonFile.php",
+                    "helper/function/num.php",
+                    "helper/function/path.php",
+                    "helper/function/prepare.php",
+                    "helper/function/remove_accents.php",
+                    "helper/function/str.php",
+                    "helper/function/url.php",
+                    "helper/script/env.php"
+                ],
+                "psr-4": {
+                    "": "class/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "André Ricardo",
+                    "email": "contatoadmx@gamil.com"
+                }
+            ],
+            "description": "Núcleo para funcionamento de aplicações Elegance",
+            "support": {
+                "issues": "https://github.com/elegance-php/core/issues",
+                "source": "https://github.com/elegance-php/core/tree/main"
+            },
+            "time": "2023-03-26T21:02:11+00:00"
+        },
+        {
+            "name": "elegance/mxcmd",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elegance-php/mxcmd.git",
+                "reference": "7c56abeb0205d012a560a26b98f8da6cee5f2b8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elegance-php/mxcmd/zipball/7c56abeb0205d012a560a26b98f8da6cee5f2b8a",
+                "reference": "7c56abeb0205d012a560a26b98f8da6cee5f2b8a",
+                "shasum": ""
+            },
+            "require": {
+                "elegance/core": "dev-main"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [],
+                "psr-4": {
+                    "": "class/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "André Ricardo",
+                    "email": "contatoadmx@gamil.com"
+                }
+            ],
+            "description": "Abre um projeto PHP para ser acessado via terminal",
+            "support": {
+                "issues": "https://github.com/elegance-php/mxcmd/issues",
+                "source": "https://github.com/elegance-php/mxcmd/tree/main"
+            },
+            "time": "2023-03-26T22:28:49+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "elegance/core": 20,
+        "elegance/mxcmd": 20,
+        "elegance/cifcode": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "ext-pdo_mysql": "*",
+        "ext-pdo_sqlite": "*"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
+}
