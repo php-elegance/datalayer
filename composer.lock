@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f03998c4c028ce2e7532b7de0e0cada5",
+    "content-hash": "32103f0d5e91aa27ed5a4ca9f50630fe",
     "packages": [
         {
-            "name": "elegance/cifcode",
+            "name": "elegance/cif-code",
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/elegance-php/cifcode.git",
-                "reference": "a07cd00529360a71bf2bf2cb8823f6f1e6b0a77d"
+                "url": "https://github.com/elegance-php/cif-code.git",
+                "reference": "cfa98df94d8b7978615e1fad9f94d3c569e28d50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elegance-php/cifcode/zipball/a07cd00529360a71bf2bf2cb8823f6f1e6b0a77d",
-                "reference": "a07cd00529360a71bf2bf2cb8823f6f1e6b0a77d",
+                "url": "https://api.github.com/repos/elegance-php/cif-code/zipball/cfa98df94d8b7978615e1fad9f94d3c569e28d50",
+                "reference": "cfa98df94d8b7978615e1fad9f94d3c569e28d50",
                 "shasum": ""
             },
             "require": {
@@ -46,10 +46,10 @@
             ],
             "description": "Aplica camada de cifra e codificação",
             "support": {
-                "issues": "https://github.com/elegance-php/cifcode/issues",
-                "source": "https://github.com/elegance-php/cifcode/tree/main"
+                "issues": "https://github.com/elegance-php/cif-code/issues",
+                "source": "https://github.com/elegance-php/cif-code/tree/main"
             },
-            "time": "2023-03-26T23:02:07+00:00"
+            "time": "2023-03-26T23:41:36+00:00"
         },
         {
             "name": "elegance/core",
@@ -156,7 +156,7 @@
     "stability-flags": {
         "elegance/core": 20,
         "elegance/mxcmd": 20,
-        "elegance/cifcode": 20
+        "elegance/cif-code": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

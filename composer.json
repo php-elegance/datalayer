@@ -20,6 +20,6 @@
         "ext-pdo_sqlite": "*",
         "elegance/core": "dev-main",
         "elegance/mxcmd": "dev-main",
-        "elegance/cifcode": "dev-main"
+        "elegance/cif-code": "dev-main"
     }
 }
