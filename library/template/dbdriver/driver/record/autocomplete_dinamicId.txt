@@ -1,0 +1,3 @@
+ 
+ * @property \Model\[#fieldDbLayer]\Record\Record[#fieldTable] $[#name] [#comment]
+ * @method $this [#name]() [#comment]

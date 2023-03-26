@@ -1,0 +1,24 @@
+[#PHP]
+
+namespace [#namespace]\Record;
+
+class Record[#tableClassName] extends \[#namespace]\Driver\DriverRecord[#tableClassName]
+{ 
+    /** Chamado quando o objeto é inserido no banco de dados */
+    protected function _onCreate(): void
+    {
+
+    }
+
+    /** Chamado quando o objeto armazena mudanças no banco de dados */
+    protected function _onUpdate(): void
+    {
+
+    }
+
+    /** Chamado quando o objeto é removido do banco de dados */
+    protected function _onDelete(): void
+    {
+
+    }
+}

@@ -1,0 +1,30 @@
+[#PHP]
+
+/***************************************************\
+|* Arquivo de driver gerado por Elegance/DbLayer *|
+|* ALTERAÇÕES REALIZADAS AQUI SERÃO SER PERDIDAS   *|
+\***************************************************/
+
+namespace [#namespace]\Driver;
+
+/**
+ * @method \[#namespace]\Record\Record[#tableClassName] active Retorna o registro marcado como ativo
+ * @method \[#namespace]\Record\Record[#tableClassName][] getAll Retorna um array de registros
+ * @method \[#namespace]\Record\Record[#tableClassName] getOne Retorna um registro
+ * @method \[#namespace]\Record\Record[#tableClassName] getNew Retorna um registro novo
+ * @method \[#namespace]\Record\Record[#tableClassName] getNull Retorna um registro nulo
+ * 
+ * @method \[#namespace]\Record\Record[#tableClassName][] _convert Converte um array de consula em um array de objetos de registro
+ */
+abstract class DriverTable[#tableClassName] extends \Elegance\DbLayer\Driver\Table
+{
+    protected $dbName = '[#dbName]';
+    protected $tableName = '[#tableName]';
+
+    protected $recordClass = '[#namespace]\Record\Record[#tableClassName]';
+}
+
+/***************************************************\
+|* Arquivo de driver gerado por Elegance/DbLayer *|
+|* ALTERAÇÕES REALIZADAS AQUI SERÃO SER PERDIDAS   *|
+\***************************************************/

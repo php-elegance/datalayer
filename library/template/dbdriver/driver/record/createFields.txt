@@ -1,0 +1,1 @@
+        $this->__field['[#name]'] = (new Field\F[#type]([#useNull],[#value]))[#extras];

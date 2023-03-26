@@ -1,0 +1,31 @@
+[#PHP]
+
+/***************************************************\
+|* Arquivo de driver gerado por Elegance/DbLayer *|
+|* ALTERAÇÕES REALIZADAS AQUI SERÃO SER PERDIDAS   *|
+\***************************************************/
+
+namespace [#namespace]\Driver;
+
+use Elegance\DbLayer\Driver\Field as Field;
+
+/**[#autocomplete]
+ */
+abstract class DriverRecord[#tableClassName] extends \Elegance\DbLayer\Driver\Record
+{
+    protected array $__fieldName = [[#nameFields]];
+    
+    protected string $__dbName = '[#dbName]';
+    protected string $__tableRef = '[#tableName]';
+
+    final function __construct(mixed $scheme = null)
+    {
+[#createFields]
+        parent::__construct($scheme);
+    }
+}
+
+/***************************************************\
+|* Arquivo de driver gerado por Elegance/DbLayer *|
+|* ALTERAÇÕES REALIZADAS AQUI SERÃO SER PERDIDAS   *|
+\***************************************************/
