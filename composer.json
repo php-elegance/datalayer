@@ -1,19 +1,25 @@
 {
-  "name": "elegance/dblayer",
-  "description": "Camada de conexão com banco de dados para aplicações php",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "André Ricardo",
-      "email": "contatoadmx@gamil.com"
+    "name": "elegance/dblayer",
+    "description": "Camada de conexão com banco de dados para aplicações php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "André Ricardo",
+            "email": "contatoadmx@gamil.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": "class/"
+        },
+        "files": []
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "ext-pdo_mysql": "*",
+        "ext-pdo_sqlite": "*",
+        "elegance/core": "dev-main",
+        "elegance/mxcmd": "dev-main",
+        "elegance/cifcode": "dev-main"
     }
-  ],
-  "minimum-stability": "dev",
-  "require": {
-    "ext-pdo_mysql": "*",
-    "ext-pdo_sqlite": "*",
-    "elegance/core": "dev-main",
-    "elegance/mxcmd": "dev-main",
-    "elegance/cifcode": "dev-main"
-  }
 }

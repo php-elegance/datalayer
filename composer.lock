@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "128481cfb15908c9a89e99f87b474397",
+    "content-hash": "f03998c4c028ce2e7532b7de0e0cada5",
     "packages": [
         {
             "name": "elegance/cifcode",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elegance-php/cifcode.git",
-                "reference": "916b3548f1fd5f930b0d851f21b413a4a2174372"
+                "reference": "a07cd00529360a71bf2bf2cb8823f6f1e6b0a77d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elegance-php/cifcode/zipball/916b3548f1fd5f930b0d851f21b413a4a2174372",
-                "reference": "916b3548f1fd5f930b0d851f21b413a4a2174372",
+                "url": "https://api.github.com/repos/elegance-php/cifcode/zipball/a07cd00529360a71bf2bf2cb8823f6f1e6b0a77d",
+                "reference": "a07cd00529360a71bf2bf2cb8823f6f1e6b0a77d",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 "issues": "https://github.com/elegance-php/cifcode/issues",
                 "source": "https://github.com/elegance-php/cifcode/tree/main"
             },
-            "time": "2023-03-26T22:30:10+00:00"
+            "time": "2023-03-26T23:02:07+00:00"
         },
         {
             "name": "elegance/core",
@@ -113,12 +113,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elegance-php/mxcmd.git",
-                "reference": "7c56abeb0205d012a560a26b98f8da6cee5f2b8a"
+                "reference": "acbeea66c53255d1227fa40bcabce3e9a4ad005d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elegance-php/mxcmd/zipball/7c56abeb0205d012a560a26b98f8da6cee5f2b8a",
-                "reference": "7c56abeb0205d012a560a26b98f8da6cee5f2b8a",
+                "url": "https://api.github.com/repos/elegance-php/mxcmd/zipball/acbeea66c53255d1227fa40bcabce3e9a4ad005d",
+                "reference": "acbeea66c53255d1227fa40bcabce3e9a4ad005d",
                 "shasum": ""
             },
             "require": {
@@ -147,7 +147,7 @@
                 "issues": "https://github.com/elegance-php/mxcmd/issues",
                 "source": "https://github.com/elegance-php/mxcmd/tree/main"
             },
-            "time": "2023-03-26T22:28:49+00:00"
+            "time": "2023-03-26T23:08:56+00:00"
         }
     ],
     "packages-dev": [],
