@@ -1,7 +1,7 @@
 [#PHP]
 
 /** Migration [#name] */
-new class($dbName, $mode) extends Elegance\DbLayer\Migration
+new class($dbName, $mode) extends Elegance\Datalayer\Migration
 {
     function up()
     {

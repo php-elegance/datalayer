@@ -2,7 +2,7 @@
 
 namespace Command\Create;
 
-use Elegance\DbLayer;
+use Elegance\Datalayer;
 use Elegance\File;
 use Elegance\Import;
 use Elegance\MxCmd;
@@ -11,7 +11,7 @@ abstract class MxMigration
 {
     static function __default($dbName = null, $name = null)
     {
-        $dbName = DbLayer::format_dbName($dbName);
+        $dbName = Datalayer::format_dbName($dbName);
 
         $path = path('library/migration', $dbName);
 

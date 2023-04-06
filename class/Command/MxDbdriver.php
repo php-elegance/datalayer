@@ -2,7 +2,7 @@
 
 namespace Command;
 
-use Elegance\DbLayer;
+use Elegance\Datalayer;
 use Elegance\Dir;
 use Elegance\File;
 use Elegance\Import;
@@ -16,8 +16,8 @@ abstract class MxDbdriver
 
     static function __default($dbName = null)
     {
-        self::$dbName = DbLayer::format_dbName($dbName);
-        self::$map = DbLayer::get($dbName)->map();
+        self::$dbName = Datalayer::format_dbName($dbName);
+        self::$map = Datalayer::get($dbName)->map();
         self::$path = './class/Model/Db' . self::$dbName;
         MxCmd::echo("Criando drivers para [[#]]", self::$dbName);
 
@@ -81,7 +81,7 @@ abstract class MxDbdriver
         $fileName = "DriverTable" . ucfirst($table['ref']);
 
         $data = [
-            'tableName' => DbLayer::format_tableName($table['ref'], true),
+            'tableName' => Datalayer::format_tableName($table['ref'], true),
             'tableClassName' => ucfirst($table['ref'])
         ];
 
@@ -103,7 +103,7 @@ abstract class MxDbdriver
         foreach ($table['fields'] as $field) {
 
             $nameFields[] = prepare("'[#]' => '[#]'", [
-                DbLayer::format_fieldName($field['ref'], true),
+                Datalayer::format_fieldName($field['ref'], true),
                 $field['ref']
             ]);
 
@@ -157,7 +157,7 @@ abstract class MxDbdriver
                 ];
 
                 if ($field['type'] == 'idx') {
-                    $data['fieldDbLayer'] = 'Db' . ucfirst($field['config']['dbName']);
+                    $data['fieldDatalayer'] = 'Db' . ucfirst($field['config']['dbName']);
                     $data['fieldTable'] = ucfirst($field['config']['table']);
                     $autocomplete[] = self::template('driver/record/autocomplete_dinamicId', $data);
                 } else {

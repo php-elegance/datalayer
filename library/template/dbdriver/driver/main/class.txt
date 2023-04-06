@@ -1,7 +1,7 @@
 [#PHP]
 
 /***************************************************\
-|* Arquivo de driver gerado por Elegance/DbLayer *|
+|* Arquivo de driver gerado por Elegance/Datalayer *|
 |* ALTERAÇÕES REALIZADAS AQUI SERÃO SER PERDIDAS   *|
 \***************************************************/
 
@@ -14,6 +14,6 @@ abstract class [#className]
 [#start]
 
 /***************************************************\
-|* Arquivo de driver gerado por Elegance/DbLayer *|
+|* Arquivo de driver gerado por Elegance/Datalayer *|
 |* ALTERAÇÕES REALIZADAS AQUI SERÃO SER PERDIDAS   *|
 \***************************************************/

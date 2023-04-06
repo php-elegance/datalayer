@@ -2,7 +2,7 @@
 
 namespace Command;
 
-use Elegance\DbLayer;
+use Elegance\Datalayer;
 use Elegance\Dir;
 use Elegance\File;
 use Elegance\Import;
@@ -22,21 +22,21 @@ abstract class MxMigration
 
     static function run($dbName = null)
     {
-        self::loadDbLayer($dbName);
+        self::loadDatalayer($dbName);
 
         while (self::up($dbName));
     }
 
     static function clean($dbName = null)
     {
-        self::loadDbLayer($dbName);
+        self::loadDatalayer($dbName);
 
         while (self::down($dbName));
     }
 
     static function up($dbName = null)
     {
-        self::loadDbLayer($dbName);
+        self::loadDatalayer($dbName);
 
         $result = self::executeNext();
 
@@ -48,7 +48,7 @@ abstract class MxMigration
 
     static function down($dbName = null)
     {
-        self::loadDbLayer($dbName);
+        self::loadDatalayer($dbName);
 
         $result = self::executePrev();
         if (!$result)
@@ -56,11 +56,11 @@ abstract class MxMigration
         return $result;
     }
 
-    protected static function loadDbLayer($dbName)
+    protected static function loadDatalayer($dbName)
     {
-        self::$dbName = DbLayer::format_dbName($dbName);
+        self::$dbName = Datalayer::format_dbName($dbName);
 
-        DbLayer::get($dbName);
+        Datalayer::get($dbName);
 
         self::$path = path('library/migration', self::$dbName);
     }
@@ -80,7 +80,7 @@ abstract class MxMigration
     /** Retorna/Altera o ID da ultima migration executada */
     protected static function lastId(?int $id = null): int
     {
-        $executed = DbLayer::get(self::$dbName)
+        $executed = Datalayer::get(self::$dbName)
             ->config('elegance_migration');
 
         $executed = is_json($executed) ? json_decode($executed, true) : [];
@@ -93,7 +93,7 @@ abstract class MxMigration
                 $executed = array_slice($executed, 0, $id);
             }
 
-            DbLayer::get(self::$dbName)
+            Datalayer::get(self::$dbName)
                 ->config('elegance_migration', json_encode($executed));
         }
         return array_pop($executed) ?? 0;

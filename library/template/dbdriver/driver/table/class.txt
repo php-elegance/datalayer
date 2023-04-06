@@ -1,7 +1,7 @@
 [#PHP]
 
 /***************************************************\
-|* Arquivo de driver gerado por Elegance/DbLayer *|
+|* Arquivo de driver gerado por Elegance/Datalayer *|
 |* ALTERAÇÕES REALIZADAS AQUI SERÃO SER PERDIDAS   *|
 \***************************************************/
 
@@ -16,7 +16,7 @@ namespace [#namespace]\Driver;
  * 
  * @method \[#namespace]\Record\Record[#tableClassName][] _convert Converte um array de consula em um array de objetos de registro
  */
-abstract class DriverTable[#tableClassName] extends \Elegance\DbLayer\Driver\Table
+abstract class DriverTable[#tableClassName] extends \Elegance\Datalayer\Driver\Table
 {
     protected $dbName = '[#dbName]';
     protected $tableName = '[#tableName]';
@@ -25,6 +25,6 @@ abstract class DriverTable[#tableClassName] extends \Elegance\DbLayer\Driver\Tab
 }
 
 /***************************************************\
-|* Arquivo de driver gerado por Elegance/DbLayer *|
+|* Arquivo de driver gerado por Elegance/Datalayer *|
 |* ALTERAÇÕES REALIZADAS AQUI SERÃO SER PERDIDAS   *|
 \***************************************************/

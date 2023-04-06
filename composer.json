@@ -1,5 +1,5 @@
 {
-    "name": "elegance/dblayer",
+    "name": "elegance/datalayer",
     "description": "Camada de conexão com banco de dados para aplicações php",
     "license": "MIT",
     "authors": [

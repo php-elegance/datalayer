@@ -1,17 +1,17 @@
 [#PHP]
 
 /***************************************************\
-|* Arquivo de driver gerado por Elegance/DbLayer *|
+|* Arquivo de driver gerado por Elegance/Datalayer *|
 |* ALTERAÇÕES REALIZADAS AQUI SERÃO SER PERDIDAS   *|
 \***************************************************/
 
 namespace [#namespace]\Driver;
 
-use Elegance\DbLayer\Driver\Field as Field;
+use Elegance\Datalayer\Driver\Field as Field;
 
 /**[#autocomplete]
  */
-abstract class DriverRecord[#tableClassName] extends \Elegance\DbLayer\Driver\Record
+abstract class DriverRecord[#tableClassName] extends \Elegance\Datalayer\Driver\Record
 {
     protected array $__fieldName = [[#nameFields]];
     
@@ -26,6 +26,6 @@ abstract class DriverRecord[#tableClassName] extends \Elegance\DbLayer\Driver\Re
 }
 
 /***************************************************\
-|* Arquivo de driver gerado por Elegance/DbLayer *|
+|* Arquivo de driver gerado por Elegance/Datalayer *|
 |* ALTERAÇÕES REALIZADAS AQUI SERÃO SER PERDIDAS   *|
 \***************************************************/
