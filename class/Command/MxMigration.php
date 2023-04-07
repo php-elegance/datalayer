@@ -62,7 +62,7 @@ abstract class MxMigration
 
         Datalayer::get($dbName);
 
-        self::$path = path('library/migration', self::$dbName);
+        self::$path = path('migration', self::$dbName);
     }
 
     /** Retorna a lista de arquivos de migration */

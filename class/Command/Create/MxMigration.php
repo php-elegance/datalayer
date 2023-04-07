@@ -9,11 +9,15 @@ use Elegance\MxCmd;
 
 abstract class MxMigration
 {
-    static function __default($dbName = null, $name = null)
+    static function __default($ref)
     {
+        $ref = explode('.', $ref);
+        $name = array_pop($ref) ?? '';
+        $dbName = array_pop($ref) ?? 'main';
+
         $dbName = Datalayer::format_dbName($dbName);
 
-        $path = path('library/migration', $dbName);
+        $path = path('migration', $dbName);
 
         $time = time();
 
@@ -33,6 +37,6 @@ abstract class MxMigration
 
         File::create("$path/$name.php", $template);
 
-        MxCmd::echo("Arquivo de migration [[#]] criado", "$name");
+        MxCmd::echo("Arquivo de migration [[#]] criado", "$ref.$name");
     }
 }
