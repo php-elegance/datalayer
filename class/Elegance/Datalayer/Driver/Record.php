@@ -141,7 +141,7 @@ abstract class Record
     /** Executa o comando parar criar o registro */
     final protected function __runCreate()
     {
-        $this->__id = Query::insert(Datalayer::format_tableName($this->__tableRef))
+        $this->__id = Query::insert(Datalayer::format_tableName($this->__tableRef, true))
             ->values($this->_getInsertArray())
             ->run($this->__dbName);
 
@@ -159,7 +159,7 @@ abstract class Record
                 unset($dif[$name]);
 
         if (!empty($dif)) {
-            Query::update(Datalayer::format_tableName($this->__tableRef))
+            Query::update(Datalayer::format_tableName($this->__tableRef, true))
                 ->where('id', $this->__id)
                 ->values($dif)
                 ->run($this->__dbName);
@@ -169,7 +169,7 @@ abstract class Record
     /** Executa o comando para remover o registro */
     final protected function __runDelete()
     {
-        Query::delete(Datalayer::format_tableName($this->__tableRef))
+        Query::delete(Datalayer::format_tableName($this->__tableRef, true))
             ->where('id', $this->__id)
             ->limit(1)
             ->run($this->__dbName);
