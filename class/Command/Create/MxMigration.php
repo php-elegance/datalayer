@@ -37,6 +37,6 @@ abstract class MxMigration
 
         File::create("$path/$name.php", $template);
 
-        MxCmd::echo("Arquivo de migration [[#]] criado", "$ref.$name");
+        MxCmd::echo("Arquivo de migration [[#]] criado", "$dbName.$name");
     }
 }
