@@ -17,14 +17,14 @@ abstract class MxMigration
 
         $dbName = Datalayer::format_dbName($dbName);
 
-        $path = path('migration', $dbName);
+        $path = path('source/migration', $dbName);
 
         $time = time();
 
         $name = $name ? "_$name" : '';
         $name = $time . $name;
 
-        $template = dirname(__DIR__, 3) . "/library/template/mx/migration.txt";
+        $template = dirname(__DIR__, 4) . "/library/template/mx/migration.txt";
 
         $data = [
             'PHP' => '<?php',

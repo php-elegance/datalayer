@@ -18,7 +18,7 @@ abstract class MxDbdriver
     {
         self::$dbName = Datalayer::format_dbName($dbName);
         self::$map = Datalayer::get($dbName)->map();
-        self::$path = './class/Model/Db' . self::$dbName;
+        self::$path = './source/class/Model/Db' . self::$dbName;
         MxCmd::echo("Criando drivers para [[#]]", self::$dbName);
 
         MxCmd::echo("--------------------");
