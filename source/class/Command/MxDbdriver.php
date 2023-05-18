@@ -229,7 +229,7 @@ abstract class MxDbdriver
     /** Retrona um teplate de driver */
     protected static function template(string $file, array $data = []): string
     {
-        $file = dirname(__DIR__, 2) . "/library/template/dbdriver/$file.txt";
+        $file = dirname(__DIR__, 3) . "/library/template/dbdriver/$file.txt";
 
         $data['PHP'] = '<?php';
         $data['dbName'] = self::$dbName;
