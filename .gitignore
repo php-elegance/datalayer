@@ -3,6 +3,6 @@
 /.env
 /mx
 
-/migration
 /library/database
-/class/Model
+/source/migration
+/source/class/Model
