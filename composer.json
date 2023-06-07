@@ -14,10 +14,9 @@
         },
         "files": []
     },
-    "minimum-stability": "dev",
     "require": {
         "ext-pdo_mysql": "*",
         "ext-pdo_sqlite": "*",
-        "elegance/core": "dev-main"
+        "elegance/core": "^1.0"
     }
 }
