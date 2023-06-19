@@ -20,7 +20,7 @@ Executa multiplas querys em uma conexão registrada
 
 **considere**
 
-- [Select](https://github.com/guaxinimdmx/elegance/tree/main/.doc/resource/datalayer/querySelect.md)
-- [Insert](https://github.com/guaxinimdmx/elegance/tree/main/.doc/resource/datalayer/queryInsert.md)
-- [Update](https://github.com/guaxinimdmx/elegance/tree/main/.doc/resource/datalayer/queryUpdate.md)
-- [Delete](https://github.com/guaxinimdmx/elegance/tree/main/.doc/resource/datalayer/queryDelete.md)
+- [Select](https://github.com/guaxinimdmx/datalayer/tree/main/.doc/class/querySelect.md)
+- [Insert](https://github.com/guaxinimdmx/datalayer/tree/main/.doc/class/queryInsert.md)
+- [Update](https://github.com/guaxinimdmx/datalayer/tree/main/.doc/class/queryUpdate.md)
+- [Delete](https://github.com/guaxinimdmx/datalayer/tree/main/.doc/class/queryDelete.md)

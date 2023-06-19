@@ -137,7 +137,7 @@ Retorna um objeto campo do tipo Hash Md5
 
 **fCode**
 
-Retorna um objeto campo do tipo Hash [Code](https://github.com/guaxinimdmx/elegance/tree/main/.doc/resource/cif-code.md)
+Retorna um objeto campo do tipo Hash [Code](https://github.com/php-elegance/core/blob/main/.doc/class/cif-code/code.md)
 
     $this->fCode($nomeDoCampo,$comentario)
 

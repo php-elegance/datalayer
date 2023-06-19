@@ -17,14 +17,21 @@ Passe como parametro, o nome da conexão que deseja recuperar
     Datalayer::get('loja'); // Recupera o datalayer de nome loja
 
 ---
+### [Documentação](https://github.com/guaxinimdmx/elegance/tree/main/.doc)
 
-- [configs](https://github.com/guaxinimdmx/elegance/tree/main/.doc/resource/datalayer/config.md)
-- [Mysql](https://github.com/guaxinimdmx/elegance/tree/main/.doc/resource/datalayer/mysql.md)
-- [SqLite](https://github.com/guaxinimdmx/elegance/tree/main/.doc/resource/datalayer/sqlite.md)
-- [Migration](https://github.com/guaxinimdmx/elegance/tree/main/.doc/resource/datalayer/migration.md)
-- [Driver](https://github.com/guaxinimdmx/elegance/tree/main/.doc/resource/datalayer/driver.md)
-- [Query](https://github.com/guaxinimdmx/elegance/tree/main/.doc/resource/datalayer/query.md)
-  - [Select](https://github.com/guaxinimdmx/elegance/tree/main/.doc/resource/datalayer/querySelect.md)
-  - [Insert](https://github.com/guaxinimdmx/elegance/tree/main/.doc/resource/datalayer/queryInsert.md)
-  - [Update](https://github.com/guaxinimdmx/elegance/tree/main/.doc/resource/datalayer/queryUpdate.md)
-  - [Delete](https://github.com/guaxinimdmx/elegance/tree/main/.doc/resource/datalayer/queryDelete.md)
+**Classes**
+
+- [Mysql](https://github.com/guaxinimdmx/datalayer/tree/main/.doc/class/mysql.md)
+- [SqLite](https://github.com/guaxinimdmx/datalayer/tree/main/.doc/class/sqlite.md)
+- [Migration](https://github.com/guaxinimdmx/datalayer/tree/main/.doc/class/migration.md)
+- [Driver](https://github.com/guaxinimdmx/datalayer/tree/main/.doc/class/driver.md)
+- [Query](https://github.com/guaxinimdmx/datalayer/tree/main/.doc/class/query.md)
+  - [Select](https://github.com/guaxinimdmx/datalayer/tree/main/.doc/class/querySelect.md)
+  - [Insert](https://github.com/guaxinimdmx/datalayer/tree/main/.doc/class/queryInsert.md)
+  - [Update](https://github.com/guaxinimdmx/datalayer/tree/main/.doc/class/queryUpdate.md)
+  - [Delete](https://github.com/guaxinimdmx/datalayer/tree/main/.doc/class/queryDelete.md)
+
+**Helpers**
+
+- [command](https://github.com/guaxinimdmx/datalayer/tree/main/.doc/helper/command.md)
+- [config](https://github.com/guaxinimdmx/datalayer/tree/main/.doc/helper/config.md)
