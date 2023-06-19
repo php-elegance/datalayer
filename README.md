@@ -17,7 +17,7 @@ Passe como parametro, o nome da conexão que deseja recuperar
     Datalayer::get('loja'); // Recupera o datalayer de nome loja
 
 ---
-### [Documentação](https://github.com/php-elegance/elegance/tree/main/.doc)
+### [Documentação](https://github.com/php-elegance/datalayer/tree/main/.doc)
 
 **Classes**
 
