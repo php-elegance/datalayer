@@ -14,6 +14,7 @@ abstract class Table
     protected $recordClass;
 
     protected array $cache = [];
+    protected bool $useCache = true;
 
     protected $active;
 
@@ -164,7 +165,7 @@ abstract class Table
     /** Verifica se um registro está armazenado em cache */
     protected function inCache($id): bool
     {
-        return isset($this->cache[$id]);
+        return $this->useCache && isset($this->cache[$id]);
     }
 
     /** Retorna um objeto de registro armazenado em cache */
@@ -173,21 +174,32 @@ abstract class Table
         $id = $scheme['id'];
         $recordClass = $this->recordClass;
 
-        $this->cache[$id] = $this->cache[$id] ?? new $recordClass($scheme);
-
-        return $this->cache[$id];
+        if ($this->useCache) {
+            $this->cache[$id] = $this->cache[$id] ?? new $recordClass($scheme);
+            return $this->cache[$id];
+        } else {
+            return new $recordClass($scheme);
+        }
     }
 
     /** Armazena um objeto de registro em cache */
     function __cacheSet(int $id, Record &$record): void
     {
-        $this->cache[$id] = $record;
+        if ($this->useCache)
+            $this->cache[$id] = $record;
     }
 
-    /** Armazena um objeto de registro em cache */
+    /** Remove um objeto armazenado em cache */
     function __cacheRemove(int $id): void
     {
-        if ($this->inCache($id))
-            unset($this->cache[$id]);
+        if ($this->useCache)
+            if ($this->inCache($id))
+                unset($this->cache[$id]);
+    }
+
+    /** Ativa ou desativa o uso do cache */
+    function __cacheStauts(bool $status): void
+    {
+        $this->useCache = $status;
     }
 }
