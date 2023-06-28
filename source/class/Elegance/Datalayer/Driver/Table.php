@@ -159,7 +159,10 @@ abstract class Table
         if (!$id)
             return new $recordClass(['id' => 0]);
 
-        return $this->recordCache($scheme);
+        if ($this->useCache)
+            return $this->recordCache($scheme);
+
+        return new $recordClass($scheme);
     }
 
     /** Verifica se um registro está armazenado em cache */
