@@ -2,6 +2,7 @@
 
 namespace Elegance\Datalayer\Driver;
 
+use Elegance\Cif;
 use Elegance\Datalayer\Query;
 use Elegance\Datalayer\Query\Select;
 use Error;
@@ -96,6 +97,13 @@ abstract class Table
     /** Monta o objeto de queru baseando-se nos parametros fornecidos */
     protected function autoQuery(...$args): Select
     {
+        /** Busca automática por id cifrado */
+        if (Cif::check($args[0])) {
+            $array = Cif::off($args[0]);
+            if (is_array($array) && array_shift($array) == $this->tableName)
+                $args = [array_shift($array)];
+        }
+
         switch ($this->typeQuery(...$args)) {
             case 1; //Query Limpa
                 $query = Query::select();

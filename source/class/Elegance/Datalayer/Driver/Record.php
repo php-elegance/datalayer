@@ -2,6 +2,7 @@
 
 namespace Elegance\Datalayer\Driver;
 
+use Elegance\Cif;
 use Elegance\Datalayer;
 use Elegance\Datalayer\Driver\Field\FIdx;
 use Elegance\Datalayer\Query;
@@ -43,6 +44,12 @@ abstract class Record
     final function id(): ?int
     {
         return $this->__id;
+    }
+
+    /** Retorna a chave de identificação cifrada */
+    final function idKey(): ?string
+    {
+        return Cif::on([$this->__tableRef, $this->id()]);
     }
 
     /** Marca o registro como ativo */
