@@ -2,6 +2,7 @@
 
 namespace Elegance\Datalayer\Driver\Field;
 
+use Elegance\Cif;
 use Elegance\Datalayer;
 use Elegance\Datalayer\Driver\Field;
 use Elegance\Datalayer\Driver\Record;
@@ -92,6 +93,12 @@ class FIdx extends Field
         return $this->get();
     }
 
+    /** Retorna a chave de identificação cifrada */
+    function idKey(): string
+    {
+        return Cif::on([$this->_table, $this->get()], $this->_table);
+    }
+
     /** Verifica se o objeto referenciado pelo IDX foi carregado */
     function _checkLoad()
     {
@@ -114,6 +121,9 @@ class FIdx extends Field
     {
         if ($name == 'id')
             return $this->id();
+
+        if ($name == 'idKey')
+            return $this->idKey();
 
         return $this->_record()->$name;
     }

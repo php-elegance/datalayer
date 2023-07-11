@@ -143,6 +143,11 @@ Retorna o identificador numerico do registro no banco
 
     $produto->id()
 
+**idKey**
+Retorna a chave de identificação cifrada
+
+    $produto->idKey()
+
 **\_getArray**
 Retorna o array dos campos do registro
 
@@ -207,6 +212,10 @@ Os drivers tambem mantem o sincronismo entre objetos que representam o mesmo reg
     $object2->name(); // Recupera o nome feijão que foi alterado no registro
 
     DbMain::produto(1)->_save(); // Salva as alteraçõs no banco de dados, incluindo a alteração do nome
+
+Você pode desativar o funcionamento do smartCache usando o metodo **__cacheStauts** 
+
+    DbMail::$produto->__cacheStauts(false);
 
 ### SmartSave
 

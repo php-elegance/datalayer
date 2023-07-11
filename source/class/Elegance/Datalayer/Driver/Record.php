@@ -47,9 +47,9 @@ abstract class Record
     }
 
     /** Retorna a chave de identificação cifrada */
-    final function idKey(): ?string
+    final function idKey(): string
     {
-        return Cif::on([$this->__tableRef, $this->id()]);
+        return Cif::on([$this->__tableRef, $this->id()], $this->__tableRef);
     }
 
     /** Marca o registro como ativo */
@@ -192,6 +192,8 @@ abstract class Record
     final function __get($name)
     {
         if ($name == 'id') return $this->__id;
+
+        if ($name == 'idKey') return $this->idKey();
 
         if (!isset($this->__field[$name]))
             throw new Error("Field [$name] not exists in [$this->__tableRef]");
