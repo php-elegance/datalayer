@@ -1,0 +1,13 @@
+<?php
+
+/** Migration [#name] */
+new class($dbName, $mode) extends Elegance\Datalayer\Migration
+{
+    function up()
+    {
+    }
+
+    function down()
+    {
+    }
+};

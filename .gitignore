@@ -1,0 +1,12 @@
+/vendor
+/composer.lock
+
+/mx
+/.env
+/index.php
+
+/source/data/migration
+
+/source/data/sqlite
+
+/source/class/Model

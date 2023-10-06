@@ -1,0 +1,24 @@
+{
+    "name": "elegance/datalayer",
+    "description": "Camada de conexão com banco de dados para aplicações Elegance",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "André Ricardo",
+            "email": "contatoadmx@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": "source/class/"
+        },
+        "files": []
+    },
+    "require": {
+        "ext-pdo_mysql": "*",
+        "ext-pdo_sqlite": "*",
+        "elegance/core": "^0.1.0",
+        "elegance/mxcmd": "^0.1.0",
+        "elegance/cif-code": "^0.1.0"
+    }
+}

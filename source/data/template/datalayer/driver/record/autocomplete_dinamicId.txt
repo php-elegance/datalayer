@@ -1,0 +1,3 @@
+ 
+ * @property \[#namespace]\Record\Record[#tableClass] $[#fieldMethod] [#fieldComment]
+ * @method $this [#fieldMethod]() [#fieldComment]

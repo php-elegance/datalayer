@@ -1,0 +1,31 @@
+<?php
+
+/***************************************************\
+|* Arquivo de driver gerado por Eleganc/Driver          *|
+|* ALTERAÇÕES REALIZADAS AQUI SERÃO SER PERDIDAS   *|
+\***************************************************/
+
+namespace [#namespace]\Driver;
+
+use Eleganc\Driver\Field as Field;
+
+/**[#autocomplete]
+ */
+abstract class DriverRecord[#tableClass] extends \Eleganc\Driver\Record
+{
+    protected array $FIELD_REF_NAME = [[#fieldRefName]];
+    
+    protected string $DATALAYER = '[#datalayer]';
+    protected string $TABLE = '[#tableName]';
+
+    final function __construct(mixed $scheme = null)
+    {
+[#createFields]
+        parent::__construct($scheme);
+    }
+}
+
+/***************************************************\
+|* Arquivo de driver gerado por Eleganc/Driver          *|
+|* ALTERAÇÕES REALIZADAS AQUI SERÃO SER PERDIDAS   *|
+\***************************************************/

@@ -1,0 +1,19 @@
+<?php
+
+/***************************************************\
+|* Arquivo de driver gerado por Elegance/Driver          *|
+|* ALTERAÇÕES REALIZADAS AQUI SERÃO SER PERDIDAS   *|
+\***************************************************/
+
+namespace [#namespace]\Driver;
+
+abstract class [#mainClass]
+{ [#varTable]    [#method]
+}
+
+[#start]
+
+/***************************************************\
+|* Arquivo de driver gerado por Elegance/Driver          *|
+|* ALTERAÇÕES REALIZADAS AQUI SERÃO SER PERDIDAS   *|
+\***************************************************/

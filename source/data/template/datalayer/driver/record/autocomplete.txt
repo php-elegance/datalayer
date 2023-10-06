@@ -1,0 +1,3 @@
+ 
+ * @property Field\F[#fieldType] $[#fieldMethod] [#fieldComment]
+ * @method $this [#fieldMethod]() [#fieldComment]
