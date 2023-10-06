@@ -7,11 +7,11 @@
 
 namespace [#namespace]\Driver;
 
-use Eleganc\Driver\Field as Field;
+use Elegance\Driver\Field as Field;
 
 /**[#autocomplete]
  */
-abstract class DriverRecord[#tableClass] extends \Eleganc\Driver\Record
+abstract class DriverRecord[#tableClass] extends \Elegance\Driver\Record
 {
     protected array $FIELD_REF_NAME = [[#fieldRefName]];
     

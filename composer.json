@@ -12,7 +12,9 @@
         "psr-4": {
             "": "source/class/"
         },
-        "files": []
+        "files": [
+            "source/helper/script/path.php"
+        ]
     },
     "require": {
         "ext-pdo_mysql": "*",
