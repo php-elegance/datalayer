@@ -51,7 +51,7 @@ return new class
 
     protected function createDriver_database(): void
     {
-        $fileName = "DriverDb" . $this->dbName;
+        $fileName = "DriverDb" . Datalayer::formatNameToClass($this->dbName);
 
         $start = [];
         $method = [];
@@ -209,7 +209,7 @@ return new class
 
     protected function createClass_database(): void
     {
-        $fileName = "Db" . $this->dbName;
+        $fileName = "Db" . Datalayer::formatNameToClass($this->dbName);
 
         $data = [
             'className' => $fileName
