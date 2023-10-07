@@ -139,7 +139,7 @@ Retorna um objeto campo do tipo Hash Md5
 
 **_code**
 
-Retorna um objeto campo do tipo Hash [Code](https://github.com/php-elegance/datalayer/blob/main/.doc/code.md)
+Retorna um objeto campo do tipo Hash [Code](https://github.com/php-elegance/cif-code/blob/main/.doc/code.md)
 
     $this->_code($nomeDoCampo,$comentario)
 
