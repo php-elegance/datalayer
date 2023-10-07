@@ -2,10 +2,6 @@
 
 ## Command
 
-**create.middleware**: Cria um arquivo de middleware em **source/data/middleware**
-
-    php mx create.middleware [dbName].[middlewareName]
-
 **create.migration**: Cria um arquivo de migration para uma conexão datalayer em **source/data/migration/[dbName]**
 
     php mx create.migration [dbName].[migrationName]
