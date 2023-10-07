@@ -199,7 +199,7 @@ Isso se torna muito util quando existem campos do tipo **IDX** (chave extrangeir
 Todos os dados inseridos ou manipulados via drive vão ter suporte ao controle inteligente. Este suporte armazena informações sobre a vida do registro.
 A classe Driver utiliza tres campos padronizados.
  
-Os campos são criados automáticamente quando se utiliza o [migration](https://github.com/php-elegance/datalayer/blob/main/.doc/class/migration.md).
+Os campos são criados automáticamente quando se utiliza o [migration](https://github.com/php-elegance/datalayer/blob/main/.doc/migration.md).
 
 **_created**: Armazena o momento em que o registro foi adicionado no campo de mesmo nome da tabela
 

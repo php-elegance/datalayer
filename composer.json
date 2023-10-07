@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "": "source/class/"
+            "": "source/"
         },
         "files": [
             "source/helper/script/path.php"

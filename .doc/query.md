@@ -20,7 +20,7 @@ Executa multiplas querys em uma conexão registrada
 
 **considere**
 
-- [Select](https://github.com/php-elegance/datalayer/blob/main/.doc/class/querySelect.md)
-- [Insert](https://github.com/php-elegance/datalayer/blob/main/.doc/class/queryInsert.md)
-- [Update](https://github.com/php-elegance/datalayer/blob/main/.doc/class/queryUpdate.md)
-- [Delete](https://github.com/php-elegance/datalayer/blob/main/.doc/class/queryDelete.md)
+- [Select](https://github.com/php-elegance/datalayer/blob/main/.doc/querySelect.md)
+- [Insert](https://github.com/php-elegance/datalayer/blob/main/.doc/queryInsert.md)
+- [Update](https://github.com/php-elegance/datalayer/blob/main/.doc/queryUpdate.md)
+- [Delete](https://github.com/php-elegance/datalayer/blob/main/.doc/queryDelete.md)
