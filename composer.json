@@ -19,8 +19,8 @@
     "require": {
         "ext-pdo_mysql": "*",
         "ext-pdo_sqlite": "*",
-        "elegance/core": "^0.1.0",
-        "elegance/mxcmd": "^0.1.0",
-        "elegance/cif-code": "^0.1.0"
+        "elegance/core": "^1.0",
+        "elegance/mxcmd": "^1.0",
+        "elegance/cif-code": "^1.0"
     }
 }
