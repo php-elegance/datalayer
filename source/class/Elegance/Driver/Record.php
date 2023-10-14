@@ -65,6 +65,20 @@ abstract class Record
         return $drvierClass::${$tableClass}->idToIdkey($this->id);
     }
 
+    /** Retorna o esquema dos campos do registro em forma de array */
+    function _scheme(): array
+    {
+        $scheme = [
+            'id' => $this->id(),
+            'idKey' => $this->idKey()
+        ];
+
+        foreach ($this->FIELD as $name => $field)
+            $scheme[$name] = $field->get();
+
+        return $scheme;
+    }
+
     /** Retorna o momento em que o campo foi criado */
     final function _created(): int
     {
@@ -112,20 +126,8 @@ abstract class Record
         return $this;
     }
 
-    /** Retorna o array dos campos do registro */
-    final function _array(bool $returnId = false)
-    {
-        $return = $returnId ? ['id' => $this->id()] : [];
-
-        foreach ($this->FIELD as $name => $field)
-            if (!str_starts_with($name, '_'))
-                $return[$name] = $field->get();
-
-        return $return;
-    }
-
     /** Retorna o array dos campos da forma como são salvos no banco de dados */
-    final function _arrayInsert($returnId = false)
+    final function _arrayInsert($returnId = false): array
     {
         $return = $returnId ? ['id' => $this->id()] : [];
 

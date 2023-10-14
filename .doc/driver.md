@@ -143,10 +143,10 @@ Retorna a chave de identificação cifrada
 
     $produto->idKey()
 
-**\_array**
-Retorna o array dos campos do registro
+**\__scheme_**
+Retorna o esquema dos campos do registro em forma de array
 
-    $produto->_array()
+    $produto->_scheme()
 
 **\_arrayInsert**
 Retorna o array dos campos da forma como são salvos no banco de dados
@@ -255,7 +255,9 @@ Isso os torna uma boa opção para automação.
 
 **\_onUpdate**: Chamado quando o registro armazena mudanças no banco de dados
 
-**\_onDelete**: Chamado quando o registro é removido do banco de dados
+**\_onDelete**: Chamado quando o registro é marcado para remoção
+
+**\_onHardDelete**: Chamado quando o registro é removido permanentemente do banco de dados
 
 ### SmartCache
 
