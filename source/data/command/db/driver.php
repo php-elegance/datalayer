@@ -183,8 +183,8 @@ return new class
                 ];
 
                 if ($fieldMap['type'] == 'idx') {
-                    $data['namespace'] = Datalayer::formatNameToDriverNamespace($fieldMap['config']['dbName']);
-                    $data['tableClass'] = Datalayer::formatNameToClass($fieldMap['config']['table']);
+                    $data['fieldNamespace'] = Datalayer::formatNameToDriverNamespace($fieldMap['config']['dbName']);
+                    $data['fieldTableClass'] = Datalayer::formatNameToClass($fieldMap['config']['table']);
                     $autocomplete[] = $this->template('driver/record/autocomplete_dinamicId', $data);
                 } else {
                     $autocomplete[] = $this->template('driver/record/autocomplete', $data);
