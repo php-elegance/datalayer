@@ -10,17 +10,16 @@
     ],
     "autoload": {
         "psr-4": {
-            "": "source/class/"
+            "": "class/"
         },
         "files": [
-            "source/helper/script/path.php"
+            "helper/script/path.php"
         ]
     },
     "require": {
         "ext-pdo_mysql": "*",
         "ext-pdo_sqlite": "*",
-        "elegance/core": "^1.0",
-        "elegance/mxcmd": "^1.0",
-        "elegance/cif-code": "^1.0"
-    }
+        "elegance/core": "dev-main"
+    },
+    "minimum-stability": "dev"
 }

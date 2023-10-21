@@ -44,7 +44,7 @@ trait TraitMigration
 
         Datalayer::get($dbName);
         self::$dbName = Datalayer::formatNameToClass($dbName);
-        self::$path = path('source/data/migration', self::$dbName);
+        self::$path = path('source/migration', self::$dbName);
     }
 
     /** Retorna a lista de arquivos de migration */

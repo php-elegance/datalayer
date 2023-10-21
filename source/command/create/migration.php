@@ -11,14 +11,14 @@ return function ($migrationName = '') {
 
     $dbName = Datalayer::formatNameToClass($dbName);
 
-    $path = path('source/data/migration', $dbName);
+    $path = path('source/migration', $dbName);
 
     $time = time();
 
     $name = $name ? "_$name" : '';
     $name = $time . $name;
 
-    $template = path("#elegance-datalayer/source/data/template/mx/migration.txt");
+    $template = path("#elegance-datalayer/source/template/mx/migration.txt");
 
     $data = [
         'time' => "$time",

@@ -11,7 +11,7 @@ Para se criar um driver, utilize o codigo abaixo no terminal
 
     php mx driver nomeDaConexão
 
-Isso vai gerar um diretório **\source\class\Model\NomeDaConexao** com todos os aquivos nescessarios para utilizar o banco. Independente do tipo de banco de dados utilizado.
+Isso vai gerar um diretório **\class\Model\NomeDaConexao** com todos os aquivos nescessarios para utilizar o banco. Independente do tipo de banco de dados utilizado.
 
 O diretório, contem 4 partes básicas
 

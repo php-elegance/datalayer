@@ -21,7 +21,7 @@ return new class
 
         $namespace = Datalayer::formatNameToDriverNamespace($dbName);
 
-        $path = path('source/class', $namespace);
+        $path = path('class', $namespace);
 
         $this->dbName = $dbName;
         $this->map = $map;
@@ -255,7 +255,7 @@ return new class
     /** Retrona um teplate de driver */
     protected function template(string $file, array $data = []): string
     {
-        $file = "#elegance-datalayer/source/data/template/datalayer/$file.txt";
+        $file = "#elegance-datalayer/source/template/datalayer/$file.txt";
 
         $data['dbName'] = $this->dbName;
         $data['namespace'] = $this->namespace;

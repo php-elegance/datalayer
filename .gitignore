@@ -5,8 +5,6 @@
 /.env
 /index.php
 
-/source/data/migration
-
-/source/data/sqlite
-
-/source/class/Model
+/class/Model
+/source/migration
+/source/sqlite
