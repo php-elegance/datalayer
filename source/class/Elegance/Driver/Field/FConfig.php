@@ -17,8 +17,6 @@ class FConfig extends Field
         if (!is_array($value))
             $value = [];
 
-        $value = array_filter($value, fn ($v) => boolval($v));
-
         return $value;
     }
 
