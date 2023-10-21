@@ -173,10 +173,22 @@ return new class
                         $extras = '';
                 }
 
+                $fieldMap['phpType'] = match ($fieldMap['type']) {
+                    'boolean' => 'bool',
+                    'code', 'email', 'hash', 'string', 'text' => 'string',
+                    'config' => 'mixed',
+                    'float' => 'float',
+                    'ids', 'log' => 'array',
+                    'idx', 'int' => 'int',
+                    'time' => 'int|string',
+                    default => 'mixed'
+                };
+
                 $data = [
                     'fieldMethod' => $feildMethod,
                     'fieldComment' => $fieldMap['comment'],
                     'fieldType' => ucfirst($fieldMap['type']),
+                    'fieldPhpType' => $fieldMap['phpType'],
                     'fieldValue' => $value,
                     'fieldUseNull' => $fieldMap['null'] ? 'true' : 'false',
                     'fieldExtras' => $extras
