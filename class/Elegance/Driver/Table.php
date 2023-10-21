@@ -199,7 +199,7 @@ abstract class Table
         if (!$id)
             return new $classRecord(['id' => 0]);
 
-        if ($this->CACHE_STATUS)
+        if ($this->__cacheCheck())
             return $this->recordCache($scheme);
 
         return new $classRecord($scheme);
@@ -208,7 +208,7 @@ abstract class Table
     /** Verifica se um registro está armazenado em cache */
     protected function inCache($id): bool
     {
-        return $this->CACHE_STATUS && isset($this->CACHE[$id]);
+        return $this->__cacheCheck() && isset($this->CACHE[$id]);
     }
 
     /** Retorna um objeto de registro armazenado em cache */
@@ -217,7 +217,7 @@ abstract class Table
         $id = $scheme['id'];
         $classRecord = $this->CLASS_RECORD;
 
-        if ($this->CACHE_STATUS) {
+        if ($this->__cacheCheck()) {
             $this->CACHE[$id] = $this->CACHE[$id] ?? new $classRecord($scheme);
             return $this->CACHE[$id];
         } else {
@@ -228,21 +228,26 @@ abstract class Table
     /** Armazena um objeto de registro em cache */
     function __cacheSet(int $id, Record &$record): void
     {
-        if ($this->CACHE_STATUS)
+        if ($this->__cacheCheck())
             $this->CACHE[$id] = $record;
     }
 
     /** Remove um objeto armazenado em cache */
     function __cacheRemove(int $id): void
     {
-        if ($this->CACHE_STATUS)
-            if ($this->inCache($id))
-                unset($this->CACHE[$id]);
+        if ($this->inCache($id))
+            unset($this->CACHE[$id]);
     }
 
     /** Ativa ou desativa o uso do cache */
     function __cacheStauts(bool $status): void
     {
         $this->CACHE_STATUS = $status;
+    }
+
+    /** Verifica o status do cache */
+    function __cacheCheck(): bool
+    {
+        return !IS_TERMINAL && $this->CACHE_STATUS;
     }
 }
