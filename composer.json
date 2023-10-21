@@ -19,7 +19,6 @@
     "require": {
         "ext-pdo_mysql": "*",
         "ext-pdo_sqlite": "*",
-        "elegance/core": "dev-main"
-    },
-    "minimum-stability": "dev"
+        "elegance/core": "^1.1"
+    }
 }
