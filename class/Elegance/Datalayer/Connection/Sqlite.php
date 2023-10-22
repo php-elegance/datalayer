@@ -20,7 +20,7 @@ class Sqlite extends Connection
 
         $file = File::setEx($file, 'sqlite');
 
-        $this->data['file'] = path('source/sqlite', $file);
+        $this->data['file'] = path('storage/sqlite', $file);
 
         $this->instancePDO = ["sqlite:" . $this->data['file']];
     }
