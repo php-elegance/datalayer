@@ -143,10 +143,10 @@ Retorna a chave de identificação cifrada
 
     $produto->idKey()
 
-**\__scheme_**
+**\_array**
 Retorna o esquema dos campos do registro em forma de array
 
-    $produto->_scheme()
+    $produto->_array()
 
 **\_arrayInsert**
 Retorna o array dos campos da forma como são salvos no banco de dados
@@ -182,6 +182,11 @@ Verifica se alum dos campos fornecidos foi alterado
 Salva o registro no banco de dados
 
     $produto->_save()
+
+**\_scheme**
+Retorna o esquema dos campos do registro tratados em forma de array
+
+    $produto->_scheme()
 
 ### Campos de registro
 

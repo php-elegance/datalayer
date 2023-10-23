@@ -65,18 +65,10 @@ abstract class Record
         return $drvierClass::${$tableClass}->idToIdkey($this->id);
     }
 
-    /** Retorna o esquema dos campos do registro em forma de array */
+    /** Retorna o esquema dos campos do registro tratados em forma de array */
     function _scheme(): array
     {
-        $scheme = [
-            'id' => $this->id(),
-            'idKey' => $this->idKey()
-        ];
-
-        foreach ($this->FIELD as $name => $field)
-            $scheme[$name] = $field->get();
-
-        return $scheme;
+        return $this->_array(...func_get_args());
     }
 
     /** Retorna o momento em que o campo foi criado */
@@ -102,6 +94,7 @@ abstract class Record
             }
             return $this;
         }
+
         return $this->FIELD['_deleted']->get();
     }
 
@@ -115,21 +108,36 @@ abstract class Record
         return $this;
     }
 
+    /** Retorna os campos do registro em forma de array */
+    final function _array(...$fields)
+    {
+        if (empty($fields))
+            $fields = ['id', 'idKey', ...array_keys($this->FIELD)];
+
+        $scheme = [];
+
+        foreach ($fields as $field)
+            $scheme[$field] = $this->$field();
+
+        return $scheme;
+    }
+
     /** Define os valores dos campos do registro com base em um array */
     final function _arraySet(array $scheme): static
     {
         foreach ($scheme as $name => $value) {
-            $field = $this->FIELD_REF_NAME[$name] ?? false;
-            if ($field)
-                $this->FIELD[$field]->set($value);
+            $name = isset($this->FIELD_REF_NAME[$name]) ? $this->FIELD_REF_NAME[$name] : $name;
+
+            if (isset($this->FIELD[$name]))
+                $this->FIELD[$name]->set($value);
         }
         return $this;
     }
 
     /** Retorna o array dos campos da forma como são salvos no banco de dados */
-    final function _arrayInsert($returnId = false): array
+    final function _arrayInsert(): array
     {
-        $return = $returnId ? ['id' => $this->id()] : [];
+        $return = ['id' => $this->id()];
 
         foreach ($this->FIELD_REF_NAME as $name => $ref)
             $return[$name] = $this->FIELD[$ref]->_insert();
