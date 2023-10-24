@@ -135,9 +135,9 @@ abstract class Record
     }
 
     /** Retorna o array dos campos da forma como são salvos no banco de dados */
-    final function _arrayInsert(): array
+    final function _arrayInsert(bool $returnId = false): array
     {
-        $return = ['id' => $this->id()];
+        $return = $returnId ? ['id' => $this->id()] : [];
 
         foreach ($this->FIELD_REF_NAME as $name => $ref)
             $return[$name] = $this->FIELD[$ref]->_insert();
