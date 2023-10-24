@@ -116,8 +116,17 @@ abstract class Record
 
         $scheme = [];
 
-        foreach ($fields as $field)
-            $scheme[$field] = $this->$field();
+        foreach ($fields as $field) {
+            if ($field == 'id') {
+                $scheme[$field] = $this->id();
+            } else if ($field == 'idKey') {
+                $scheme[$field] = $this->idKey();
+            } else {
+                $name = isset($this->FIELD_REF_NAME[$field]) ? $this->FIELD_REF_NAME[$field] : $field;
+                if (isset($this->FIELD[$name]))
+                    $scheme[$field] = $this->FIELD[$name]->get();
+            }
+        }
 
         return $scheme;
     }
