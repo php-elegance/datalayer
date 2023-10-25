@@ -2,7 +2,7 @@
 
 namespace Elegance;
 
-// php mx migration
+// php mx create.migration
 
 return function ($migrationName = '') {
     $ref = explode('.', $migrationName);
