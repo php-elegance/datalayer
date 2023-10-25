@@ -13,12 +13,12 @@
             "": "class/"
         },
         "files": [
-            "helper/script/path.php"
+            "source/helper/script/path.php"
         ]
     },
     "require": {
         "ext-pdo_mysql": "*",
         "ext-pdo_sqlite": "*",
-        "elegance/core": "^1.1"
+        "elegance/core": "^1.2"
     }
 }
