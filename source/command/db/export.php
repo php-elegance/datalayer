@@ -14,7 +14,7 @@ return function ($ref = 'main', $file = null) {
 
     $dbName = Datalayer::formatNameToDb($dbName);
 
-    $file = $file ?? $dbName;
+    $file = $file ?? $ref;
 
     $map = Datalayer::get($dbName)->getConfig('__dbMap') ?? [];
 
