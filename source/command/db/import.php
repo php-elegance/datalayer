@@ -7,16 +7,16 @@ use Elegance\Datalayer\Query;
 
 // php mx db.import
 
-return function ($ref = 'main', $file = null, $useId = false) {
+return function ($ref = 'main', $useId = false) {
     $tables = explode('.', $ref);
 
     $dbName = array_shift($tables);
 
     $dbName = Datalayer::formatNameToDb($dbName);
 
-    $file = $file ?? $dbName;
+    $file = $ref;
 
-    $fields = jsonFile($file);
+    $fields = jsonFile("$file.json");
 
     $tables = array_shift($tables) ?? array_keys($fields);
     $tables = is_array($tables) ? $tables : [$tables];
@@ -31,7 +31,7 @@ return function ($ref = 'main', $file = null, $useId = false) {
                 $querys[$table] = Query::insert($table)->dbName($dbName)->values(...$fields[$table]);
             }
         } else {
-            throw new Error("table [$ref] not found in [$dbName]");
+            throw new Error("table [$table] not found in [$dbName]");
         }
 
     Datalayer::get($dbName)->executeQueryList($querys);

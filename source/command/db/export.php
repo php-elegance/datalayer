@@ -7,7 +7,7 @@ use Elegance\Datalayer\Query;
 
 // php mx db.export
 
-return function ($ref = 'main', $file = null) {
+return function ($ref = 'main') {
     $tables = explode('.', $ref);
 
     $dbName = array_shift($tables);
@@ -30,7 +30,7 @@ return function ($ref = 'main', $file = null) {
         }
 
 
-    jsonFile($file, $export);
+    jsonFile("$file.json", $export);
 
     Terminal::echo("Dados do datalayer [$ref] exportado para [$file.json]");
 };
