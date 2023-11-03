@@ -7,7 +7,7 @@ class Record[#tableClass] extends \[#namespace]\Driver\DriverRecord[#tableClass]
     /** Retorna o esquema dos campos do registro tratados em forma de array */
     function _scheme(): array
     {   
-        $scheme = parent::_scheme(...func_get_args());
+        return parent::_scheme(...func_get_args());
     }
     
     /** Chamado quando o objeto é inserido no banco de dados */
