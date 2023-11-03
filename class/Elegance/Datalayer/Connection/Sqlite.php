@@ -54,7 +54,7 @@ class Sqlite extends Connection
                 $this->executeQuery('CREATE TABLE __config (`name` VARCHAR (100), `value` TEXT);');
 
             foreach ($this->executeQuery(Query::select('__config')) as $config)
-                $this->config[$config['name']] = unserialize($config['value']);
+                $this->config[$config['name']] = is_serialized($config['value']) ? unserialize($config['value']) : $config['value'];
         }
     }
 
