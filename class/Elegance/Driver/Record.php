@@ -26,16 +26,24 @@ abstract class Record
     protected bool $HARD_DELETE = false;
 
     /** Chamado quando o registro é inserido no banco de dados */
-    abstract protected function _onCreate();
+    protected function _onCreate()
+    {
+    }
 
     /** Chamado quando o registro armazena mudanças no banco de dados */
-    abstract protected function _onUpdate();
+    protected function _onUpdate()
+    {
+    }
 
     /** Chamado quando o registro é marcado como remivodo */
-    abstract protected function _onDelete();
+    protected function _onDelete()
+    {
+    }
 
     /** Chamado quando o registro é removido PERMANENTEMENTE do banco de dados */
-    abstract protected function _onHardDelete();
+    protected function _onHardDelete()
+    {
+    }
 
     function __construct(array $scheme)
     {
@@ -258,42 +266,40 @@ abstract class Record
     final protected function __runCreate()
     {
         $this->__runSaveIdx();
+        if ($this->_onCreate() ?? true) {
+            $this->FIELD['_created']->set(true);
 
-        $this->_onCreate();
+            $this->ID = Query::insert($this->TABLE)
+                ->values($this->_arrayInsert())
+                ->run($this->DATALAYER);
 
-        $this->FIELD['_created']->set(true);
+            $drvierClass = Datalayer::formatNameToDriverClass($this->DATALAYER);
+            $tableClass = Datalayer::formatNameToMethod($this->TABLE);
 
-        $this->ID = Query::insert($this->TABLE)
-            ->values($this->_arrayInsert())
-            ->run($this->DATALAYER);
-
-        $drvierClass = Datalayer::formatNameToDriverClass($this->DATALAYER);
-        $tableClass = Datalayer::formatNameToMethod($this->TABLE);
-
-        $drvierClass::${$tableClass}->__cacheSet($this->ID, $this);
+            $drvierClass::${$tableClass}->__cacheSet($this->ID, $this);
+        }
     }
 
     /** Executa o comando parar atualizar o registro */
     final protected function __runUpdate()
     {
         $this->__runSaveIdx();
-
         if ($this->_checkChange()) {
-            $this->_onUpdate();
+            if ($this->_onUpdate() ?? true) {
+                $dif = $this->_arrayInsert();
 
-            $dif = $this->_arrayInsert();
+                foreach ($dif as $name => $value)
+                    if ($value == $this->INITIAL[$name])
+                        unset($dif[$name]);
 
-            foreach ($dif as $name => $value)
-                if ($value == $this->INITIAL[$name])
-                    unset($dif[$name]);
+                $dif['_updated'] = time();
+                $this->FIELD['_updated']->set($dif['_updated']);
 
-            $dif['_updated'] = time();
-            $this->FIELD['_updated']->set($dif['_updated']);
-
-            Query::update($this->TABLE)
-                ->where('id', $this->ID)
-                ->values($dif)
-                ->run($this->DATALAYER);
+                Query::update($this->TABLE)
+                    ->where('id', $this->ID)
+                    ->values($dif)
+                    ->run($this->DATALAYER);
+            }
         }
     }
 
@@ -303,39 +309,39 @@ abstract class Record
         $this->__runSaveIdx();
 
         if ($this->_checkChange()) {
-            $this->_onDelete();
+            if ($this->_onDelete() ?? true) {
+                $dif = $this->_arrayInsert();
 
-            $dif = $this->_arrayInsert();
+                foreach ($dif as $name => $value)
+                    if ($value == $this->INITIAL[$name])
+                        unset($dif[$name]);
 
-            foreach ($dif as $name => $value)
-                if ($value == $this->INITIAL[$name])
-                    unset($dif[$name]);
-
-            if (!empty($dif))
-                Query::update($this->TABLE)
-                    ->where('id', $this->ID)
-                    ->values($dif)
-                    ->run($this->DATALAYER);
+                if (!empty($dif))
+                    Query::update($this->TABLE)
+                        ->where('id', $this->ID)
+                        ->values($dif)
+                        ->run($this->DATALAYER);
+            }
         }
     }
 
     /** Executa o comando para remover o registro */
     final protected function __runHardDelete()
     {
-        $this->_onHardDelete();
+        if ($this->_onHardDelete() ?? true) {
+            Query::delete($this->TABLE)
+                ->where('id', $this->ID)
+                ->limit(1)
+                ->run($this->DATALAYER);
 
-        Query::delete($this->TABLE)
-            ->where('id', $this->ID)
-            ->limit(1)
-            ->run($this->DATALAYER);
+            $oldId = $this->ID;
+            $this->ID = null;
 
-        $oldId = $this->ID;
-        $this->ID = null;
+            $drvierClass = Datalayer::formatNameToDriverClass($this->DATALAYER);
+            $tableClass = Datalayer::formatNameToMethod($this->TABLE);
 
-        $drvierClass = Datalayer::formatNameToDriverClass($this->DATALAYER);
-        $tableClass = Datalayer::formatNameToMethod($this->TABLE);
-
-        $drvierClass::${$tableClass}->__cacheRemove($oldId);
+            $drvierClass::${$tableClass}->__cacheRemove($oldId);
+        }
     }
 
     final function __get($name)
