@@ -264,6 +264,8 @@ Isso os torna uma boa opção para automação.
 
 **\_onHardDelete**: Chamado quando o registro é removido permanentemente do banco de dados
 
+> Esses metodos podem retornar **false** para interromper a ação
+
 ### SmartCache
 
 Os drivers utilizam cache para sincronizar registros e evitar consultas desnecessárias ao banco de dados.
