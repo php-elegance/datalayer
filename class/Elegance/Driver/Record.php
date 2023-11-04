@@ -240,13 +240,13 @@ abstract class Record
     }
 
     /** Salva o registro no banco de dados */
-    final function _save(): static
+    final function _save(bool $forceUpdate = false): static
     {
         if ($this->_checkSave())
             match (true) {
                 $this->HARD_DELETE => $this->__runHardDelete(),
                 $this->DELETED => $this->__runDelete(),
-                $this->_checkInDb() => $this->__runUpdate(),
+                $this->_checkInDb() => $this->__runUpdate($forceUpdate),
                 default => $this->__runCreate()
             };
 
@@ -281,10 +281,10 @@ abstract class Record
     }
 
     /** Executa o comando parar atualizar o registro */
-    final protected function __runUpdate()
+    final protected function __runUpdate(bool $forceUpdate)
     {
         $this->__runSaveIdx();
-        if ($this->_checkChange()) {
+        if ($forceUpdate || $this->_checkChange()) {
             if ($this->_onUpdate() ?? true) {
                 $dif = $this->_arrayInsert();
 

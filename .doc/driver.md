@@ -299,6 +299,7 @@ Os drivers realizam uma verificação antes de realizar o save de um registro
   DbMain::produto(1)->\_save(); // Não será realizado nenhum update no banco, pois o regisro não foi alterado.
   DbMain::produto(1)->name('feijão')->\_save(); // O registro será atualizado no banco de dados.
   DbMain::produto()->\_save(); // O registro será salvo com os valores padrão.
+  DbMain::produto(1)->\_save(true); // Será realizado um update forçado, independente das alterações do registro.
 
 O save tambem atualiza os campos IDXs carregados automaticamente, inclusive criando novos campos quando for requisitado;
 Isso so acontece se o registro tiver sido carregado.
