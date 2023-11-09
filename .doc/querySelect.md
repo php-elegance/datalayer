@@ -15,10 +15,16 @@ Adiciona um WHERE ao select
 
     Query::select($table)->where();
 
+**whereIn**
+Adiciona um WHERE verificando valores numericos em um array
+
+    Query::select($table)->whereIn(string $field, array|string $ids);
+
 **whereNull**
 Adiciona um WHERE para ser utilizado na query verificando se um campo é nulo
 
     Query::select($table)->whereNull($campo, $status = true);
+    
 
 **fields**
 Define os campos que devem ser retornados no select, NULL ou \* retorna todos os campos

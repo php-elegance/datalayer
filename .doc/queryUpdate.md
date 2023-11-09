@@ -15,6 +15,11 @@ Adiciona um WHERE ao select
 
     Query::update($table)->where();
 
+**whereIn**
+Adiciona um WHERE verificando valores numericos em um array
+
+    Query::update($table)->whereIn(string $field, array|string $ids);
+
 **whereNull**
 Adiciona um WHERE para ser utilizado na query verificando se um campo é nulo
 

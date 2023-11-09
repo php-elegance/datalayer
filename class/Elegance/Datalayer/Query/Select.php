@@ -92,6 +92,20 @@ class Select extends BaseQuery
         return $this;
     }
 
+    /** Adiciona um WHERE verificando valores numericos em um array */
+    function whereIn(string $field, array|string $ids): static
+    {
+        if (is_string($ids))
+            $ids = explode(',', $ids);
+
+        $ids = array_filter($ids, fn ($id) => is_int($id));
+        $ids = implode(',', $ids);
+
+        $this->where("$field in ($ids)");
+
+        return $this;
+    }
+
     /** Adiciona um WHERE para ser utilizado na query verificando se um campo é nulo */
     function whereNull(string $campo, bool $status = true): static
     {
