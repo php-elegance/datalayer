@@ -1,7 +1,9 @@
 <?php
 
+namespace [#namespace];
+
 /** Migration [#name] */
-new class($dbName, $mode) extends Elegance\Datalayer\Migration
+class [#name] extends \Elegance\Datalayer\Migration
 {
     function up()
     {
@@ -10,4 +12,4 @@ new class($dbName, $mode) extends Elegance\Datalayer\Migration
     function down()
     {
     }
-};
+}
