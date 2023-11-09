@@ -2,9 +2,9 @@
 
 namespace Elegance\Datalayer\Terminal;
 
-use Elegance\Datalayer;
-use Elegance\Dir;
-use Elegance\File;
+use Elegance\Datalayer\Datalayer;
+use Elegance\Core\Dir;
+use Elegance\Core\File;
 use Elegance\Import;
 use Elegance\Terminal;
 use Error;

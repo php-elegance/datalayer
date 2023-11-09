@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegance\Driver\Field;
+namespace Elegance\Datalayer\Driver\Field;
 
-use Elegance\Driver\Field;
+use Elegance\Datalayer\Driver\Field;
 
 /** Armazena dados Booleanos 1 ou 0 */
 class FBoolean extends Field

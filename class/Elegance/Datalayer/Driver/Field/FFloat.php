@@ -1,12 +1,12 @@
 <?php
 
-namespace Elegance\Driver\Field;
+namespace Elegance\Datalayer\Driver\Field;
 
-use Elegance\Driver\Field;
+use Elegance\Datalayer\Driver\Field;
 use Error;
 
-/** Armazena numeros inteiros */
-class FInt extends Field
+/** Armazena numeros com casas decimais */
+class FFloat extends Field
 {
     protected $DEFAULT = 0;
 
@@ -14,6 +14,7 @@ class FInt extends Field
     protected $MAX;
     protected $SIZE;
     protected $ROUND = 0;
+    protected $DECIMAL = 2;
 
     protected function _formatToUse($value)
     {
@@ -21,7 +22,7 @@ class FInt extends Field
             $min = $this->MIN ?? $value;
             $max = $this->MAX ?? $value;
             $value = num_interval($value, $min, $max);
-            $value = num_round($value, $this->ROUND);
+            $value = num_format($value, $this->DECIMAL, $this->ROUND);
         } else {
             $value = null;
         }
@@ -64,6 +65,15 @@ class FInt extends Field
     function round(?int $value): static
     {
         $this->ROUND = num_interval(intval($value), -1, 1);
+        return $this;
+    }
+
+    /** Termina a forma de arredondamento do campo */
+    function decimal(?int $value): static
+    {
+        $value = intval($value);
+        $value = num_positive($value);
+        $this->DECIMAL = $value;
         return $this;
     }
 

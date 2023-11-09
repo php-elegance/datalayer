@@ -4,8 +4,8 @@ namespace Elegance\Datalayer\Connection;
 
 use Elegance\Datalayer\Connection;
 use Elegance\Datalayer\Query;
-use Elegance\Dir;
-use Elegance\File;
+use Elegance\Core\Dir;
+use Elegance\Core\File;
 use Error;
 use Exception;
 use PDO;

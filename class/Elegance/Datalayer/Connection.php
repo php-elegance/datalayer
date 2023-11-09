@@ -2,7 +2,6 @@
 
 namespace Elegance\Datalayer;
 
-use Elegance\Datalayer;
 use Elegance\Datalayer\Query\BaseQuery;
 use Error;
 use Exception;
@@ -82,7 +81,7 @@ abstract class Connection
 
             if (!$pdoQuery->execute($data)) {
                 $error = $pdoQuery->errorInfo();
-                $error = array_pop($error);
+                $error = $error[2] ?? '-undefined-';
                 throw new Error("[$query] [$error]");
             }
         } catch (Error | Exception | PDOException $e) {

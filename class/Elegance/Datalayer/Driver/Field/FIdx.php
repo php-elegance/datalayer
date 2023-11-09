@@ -1,10 +1,10 @@
 <?php
 
-namespace Elegance\Driver\Field;
+namespace Elegance\Datalayer\Driver\Field;
 
-use Elegance\Datalayer;
-use Elegance\Driver\Field;
-use Elegance\Driver\Record;
+use Elegance\Datalayer\Datalayer;
+use Elegance\Datalayer\Driver\Field;
+use Elegance\Datalayer\Driver\Record;
 
 /** Armazena um ID de referencia para uma tabela */
 class FIdx extends Field

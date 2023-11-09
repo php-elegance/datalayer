@@ -1,9 +1,9 @@
 <?php
 
-namespace Elegance\Driver\Field;
+namespace Elegance\Datalayer\Driver\Field;
 
-use Elegance\Datalayer;
-use Elegance\Driver\Field;
+use Elegance\Datalayer\Datalayer;
+use Elegance\Datalayer\Driver\Field;
 use Elegance\Datalayer\Query;
 use Elegance\Datalayer\Query\Select;
 

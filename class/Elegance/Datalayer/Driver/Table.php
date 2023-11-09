@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegance\Driver;
+namespace Elegance\Datalayer\Driver;
 
-use Elegance\Cif;
+use Elegance\Core\Cif;
 use Elegance\Datalayer\Query;
 use Elegance\Datalayer\Query\Select;
 use Error;

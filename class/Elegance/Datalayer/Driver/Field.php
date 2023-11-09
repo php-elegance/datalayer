@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegance\Driver;
+namespace Elegance\Datalayer\Driver;
 
 abstract class Field
 {

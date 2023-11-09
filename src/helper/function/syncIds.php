@@ -1,9 +1,7 @@
 <?php
 
-use Elegance\Datalayer\Query;
-use Elegance\Driver\Record;
-use Elegance\Driver\Table;
-use Model\DbMain\DbMain;
+use Elegance\Datalayer\Driver\Record;
+use Elegance\Datalayer\Driver\Table;
 
 if (!function_exists('syncIds')) {
 

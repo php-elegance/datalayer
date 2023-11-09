@@ -1,19 +1,19 @@
 <?php
 
-namespace Elegance\Driver\Field;
+namespace Elegance\Datalayer\Driver\Field;
 
-use Elegance\Code;
-use Elegance\Driver\Field;
+use Elegance\Datalayer\Driver\Field;
 
-/** Armazena um hash Code */
-class FCode extends Field
+/** Armazena um hash MD5 */
+class FHash extends Field
 {
     protected function _formatToUse($value)
     {
         if (!is_string($value))
             $value  = serialize($value);
 
-        $value = Code::on($value);
+        if (!is_md5($value))
+            $value = md5($value);
 
         return $value;
     }
@@ -26,6 +26,6 @@ class FCode extends Field
     /** Verifica se uma variavel tem o Hash do valor do campo */
     function check($var): bool
     {
-        return Code::compare($this->_formatToUse($var), $this->get());
+        return $this->_formatToUse($var) === $this->get();
     }
 }

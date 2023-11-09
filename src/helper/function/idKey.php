@@ -1,6 +1,6 @@
 <?php
 
-use Elegance\Cif;
+use Elegance\Core\Cif;
 
 if (!function_exists('is_idKey')) {
 

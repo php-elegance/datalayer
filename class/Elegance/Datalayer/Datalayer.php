@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegance;
+namespace Elegance\Datalayer;
 
 use Elegance\Datalayer\Connection;
 use Error;

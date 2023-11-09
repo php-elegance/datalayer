@@ -1,8 +1,8 @@
 <?php
 
-namespace Elegance\Driver\Field;
+namespace Elegance\Datalayer\Driver\Field;
 
-use Elegance\Driver\Field;
+use Elegance\Datalayer\Driver\Field;
 
 /** armazena configurações e seus valores em forma de JSON */
 class FConfig extends Field

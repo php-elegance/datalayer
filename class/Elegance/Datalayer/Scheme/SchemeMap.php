@@ -2,7 +2,7 @@
 
 namespace Elegance\Datalayer\Scheme;
 
-use Elegance\Datalayer;
+use Elegance\Datalayer\Datalayer;
 
 class SchemeMap
 {

@@ -2,7 +2,7 @@
 
 namespace Elegance\Datalayer\Connection;
 
-use Elegance\Cif;
+use Elegance\Core\Cif;
 use Elegance\Datalayer\Connection;
 use Elegance\Datalayer\Query;
 use Error;

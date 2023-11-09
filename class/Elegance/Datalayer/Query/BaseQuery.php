@@ -2,7 +2,7 @@
 
 namespace Elegance\Datalayer\Query;
 
-use Elegance\Datalayer;
+use Elegance\Datalayer\Datalayer;
 use Error;
 
 abstract class BaseQuery

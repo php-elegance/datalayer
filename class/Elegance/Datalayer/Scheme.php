@@ -2,7 +2,7 @@
 
 namespace Elegance\Datalayer;
 
-use Elegance\Datalayer;
+use Elegance\Datalayer\Datalayer;
 use Elegance\Datalayer\Scheme\SchemeMap;
 use Elegance\Datalayer\Scheme\SchemeTable;
 

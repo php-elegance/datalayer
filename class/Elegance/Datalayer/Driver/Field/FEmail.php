@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegance\Driver\Field;
+namespace Elegance\Datalayer\Driver\Field;
 
 /** Armazena string de email */
 class FEmail extends FString

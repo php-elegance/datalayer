@@ -2,7 +2,7 @@
 
 namespace Elegance\Datalayer;
 
-use Elegance\Datalayer;
+use Elegance\Datalayer\Datalayer;
 use Elegance\Datalayer\Query\Delete;
 use Elegance\Datalayer\Query\Insert;
 use Elegance\Datalayer\Query\Update;

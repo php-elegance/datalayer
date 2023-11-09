@@ -1,12 +1,12 @@
 <?php
 
-namespace Elegance\Driver;
+namespace Elegance\Datalayer\Driver;
 
-use Elegance\Datalayer;
-use Elegance\Driver\Field\FIdx;
+use Elegance\Datalayer\Datalayer;
+use Elegance\Datalayer\Driver\Field\FIdx;
 use Elegance\Datalayer\Query;
 use Error;
-use Elegance\Driver\Field\FTime;
+use Elegance\Datalayer\Driver\Field\FTime;
 
 /** 
  * @property int|null $id chave de identificação numerica do registro

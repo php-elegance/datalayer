@@ -7,7 +7,7 @@
 
 namespace [#namespace]\Driver;
 
-use Elegance\Driver\Field as Field;
+use Elegance\Datalayer\Driver\Field as Field;
 
 /**[#autocomplete]
  */
