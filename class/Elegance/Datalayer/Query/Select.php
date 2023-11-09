@@ -129,7 +129,13 @@ class Select extends BaseQuery
         $fields = [];
         foreach ($this->fields as $name => $alias) {
             if (!is_numeric($name)) {
-                $name = substr_count($name, '(') ? $name : "`$name`";
+                if (!substr_count($name, '(')) {
+                    if (substr_count($name, '.')) {
+                        $name = explode('.', $name);
+                        $name = array_map(fn ($v) => $v != '*' ? "`$v`" : $v, $name);
+                        $name = implode('.', $name);
+                    }
+                }
                 $fields[] = $alias ? "$name as $alias" : $name;
             }
         }

@@ -2,6 +2,8 @@
 
 namespace Elegance\Datalayer\Query;
 
+use Error;
+
 class Insert extends BaseQuery
 {
     protected array $columns = [];
@@ -41,7 +43,6 @@ class Insert extends BaseQuery
     {
         return parent::run($dbName);
     }
-
 
     /** Define os registros para inserção */
     function values(): static
@@ -87,5 +88,13 @@ class Insert extends BaseQuery
             $inserts[] = '(' . implode(', ', $insert) . ')';
         }
         return implode(', ', $inserts);
+    }
+
+    protected function mountTable(): string
+    {
+        if (is_array($this->table))
+            throw new Error("Query INSERT podem conter apenas um valor para [table]");
+
+        return parent::mountTable();
     }
 }

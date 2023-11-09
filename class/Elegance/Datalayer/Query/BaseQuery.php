@@ -9,9 +9,9 @@ abstract class BaseQuery
 {
     protected array $data = [];
     protected ?string $dbName = null;
-    protected ?string $table = null;
+    protected null|string|array $table = null;
 
-    function __construct(?string $table)
+    function __construct(null|string|array $table)
     {
         $this->table($table);
     }
@@ -41,7 +41,7 @@ abstract class BaseQuery
     }
 
     /** Define uma tabela para ser utilizada na query */
-    function table(?string $table): static
+    function table(null|string|array $table): static
     {
         $this->table = $table;
         return $this;
@@ -49,8 +49,16 @@ abstract class BaseQuery
 
     protected function mountTable(): string
     {
-        if ($this->table)
-            return substr_count($this->table, '.') ? $this->table : "`$this->table`";
+        if ($this->table) {
+            if (is_array($this->table)) {
+                $table = [];
+                foreach ($this->table as $name => $alias)
+                    $table[] = !is_numeric($name) ? "`$name` as `$alias" : "`$alias`";
+                return implode(', ', $table);
+            } else {
+                return substr_count($this->table, '.') ? $this->table : "`$this->table`";
+            }
+        }
         return '';
     }
 }

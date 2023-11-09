@@ -2,6 +2,8 @@
 
 namespace Elegance\Datalayer\Query;
 
+use Error;
+
 class Update extends BaseQuery
 {
     protected array $values = [];
@@ -90,7 +92,7 @@ class Update extends BaseQuery
 
     protected function mountValues(): string
     {
-        $change     = [];
+        $change = [];
         foreach ($this->values as $name => $value) {
             if (is_numeric($name)) {
                 $value = substr_count($value, '(') ? $value : "`$value`";
@@ -130,5 +132,13 @@ class Update extends BaseQuery
         $return = array_filter($return);
 
         return empty($return) ? '' : 'WHERE (' . implode(') AND (', $return) . ')';
+    }
+
+    protected function mountTable(): string
+    {
+        if (is_array($this->table))
+            throw new Error("Query UPDATE podem conter apenas um valor para [table]");
+
+        return parent::mountTable();
     }
 }
