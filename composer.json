@@ -12,7 +12,11 @@
         "psr-4": {
             "": "class/"
         },
-        "files": []
+        "files": [
+            "src/helper/function/idKey.php",
+            "src/helper/function/syncIds.php",
+            "src/helper/script/path.php"
+        ]
     },
     "require": {
         "ext-pdo_mysql": "*",
