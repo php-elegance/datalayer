@@ -66,9 +66,9 @@ abstract class Migration
     function &table(string $table, ?string $comment = null): SchemeTable
     {
         $returnTable = $this->scheme->table($table, $comment)->fields([
-            $this->_time('_created', 'smart control to create')->default(0),
-            $this->_time('_updated', 'smart control to update')->default(0),
-            $this->_time('_deleted', 'smart control to delete')->default(0),
+            $this->_time('_created', 'smart control to create')->default(0)->index(true),
+            $this->_time('_updated', 'smart control to update')->default(0)->index(true),
+            $this->_time('_deleted', 'smart control to delete')->default(0)->index(true),
         ]);
         return $returnTable;
     }
