@@ -19,17 +19,10 @@ namespace [#namespace]\Driver;
  */
 abstract class DriverTable[#tableClass] extends \Elegance\Driver\Table
 {
-    public readonly string $DATALAYER;
-    public readonly string $TABLE;
-    public readonly string $CLASS_RECORD;
+    protected $DATALAYER = '[#datalayer]';
+    protected $TABLE = '[#tableName]';
 
-    function __construct()
-    {
-        $this->DATALAYER = '[#datalayer]';
-        $this->TABLE = '[#tableName]';
-        $this->CLASS_RECORD = '[#namespace]\Record\Record[#tableClass]';
-    }
-
+    protected $CLASS_RECORD = '[#namespace]\Record\Record[#tableClass]';
 }
 
 /***************************************************\

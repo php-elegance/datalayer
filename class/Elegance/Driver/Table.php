@@ -9,9 +9,10 @@ use Error;
 
 abstract class Table
 {
-    public readonly string $DATALAYER;
-    public readonly string $TABLE;
-    public readonly string $CLASS_RECORD;
+    protected $DATALAYER;
+    protected $TABLE;
+
+    protected $CLASS_RECORD;
 
     protected array $CACHE = [];
     protected bool $CACHE_STATUS = true;
@@ -156,7 +157,7 @@ abstract class Table
         $query->dbName($this->DATALAYER)->table($this->TABLE);
 
         if (!is_null($this->SHOW_DELETED_FIELDS))
-            $query->where($this->SHOW_DELETED_FIELDS ? '_deleted > 0' : '_deleted = 0');
+            $query->where('_deleted', $this->SHOW_DELETED_FIELDS);
 
         $this->SHOW_DELETED_FIELDS = false;
 
@@ -171,7 +172,7 @@ abstract class Table
         if (is_null($param))
             return 1; //Query Limpa
 
-        if (is_numeric($param) && intval($param) == $param && $args > 0)
+        if (is_numeric($param) && intval($param) == $param && count($args) == 1)
             return 2; //Busca por ID
 
         if (is_string($param))
