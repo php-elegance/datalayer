@@ -2,7 +2,7 @@
 
 ## Command
 
-**create.migration**: Cria um arquivo de migration para uma conexão datalayer em **source/migration/[dbName]**
+**create.migration**: Cria um arquivo de migration para uma conexão datalayer em **src/migration/[dbName]**
 
     php mx create.migration [dbName].[migrationName]
 

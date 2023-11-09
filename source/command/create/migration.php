@@ -11,7 +11,7 @@ return function ($migrationName = '') {
 
     $dbName = Datalayer::formatNameToClass($dbName);
 
-    $path = path('source/migration', $dbName);
+    $path = path('src/migration', $dbName);
 
     $time = time();
 

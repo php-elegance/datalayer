@@ -12,13 +12,12 @@
         "psr-4": {
             "": "class/"
         },
-        "files": [
-            "source/helper/script/path.php"
-        ]
+        "files": []
     },
     "require": {
         "ext-pdo_mysql": "*",
         "ext-pdo_sqlite": "*",
-        "elegance/core": "^1.2"
-    }
+        "elegance/core": "dev-main"
+    },
+    "minimum-stability": "dev"
 }
