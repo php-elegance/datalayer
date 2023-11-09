@@ -56,6 +56,12 @@ abstract class Record
         $this->ID = $scheme['id'] ?? null;
         $this->INITIAL = $this->_arrayInsert();
         $this->DELETED = boolval($this->FIELD['_deleted']->get());
+
+        if ($this->_checkInDb()) {
+            $drvierClass = Datalayer::formatNameToDriverClass($this->DATALAYER);
+            $tableClass = Datalayer::formatNameToMethod($this->TABLE);
+            $drvierClass::${$tableClass}->__cacheSet($this->ID, $this);
+        }
     }
 
     /** Retorna a chave de identificação numerica do registro */
