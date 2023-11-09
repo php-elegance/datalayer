@@ -6,5 +6,5 @@
 /index.php
 
 /class/Model
-/source/migration
-/storage/sqlite
+/scr/migration
+/library/sqlite
