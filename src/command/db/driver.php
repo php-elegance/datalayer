@@ -267,7 +267,7 @@ return new class
     /** Retrona um teplate de driver */
     protected function template(string $file, array $data = []): string
     {
-        $file = "#elegance-datalayer/front/template/datalayer/$file.txt";
+        $file = "#elegance-datalayer/view/template/datalayer/$file.txt";
 
         $data['dbName'] = $this->dbName;
         $data['namespace'] = $this->namespace;

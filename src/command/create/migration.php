@@ -18,7 +18,7 @@ return function ($migrationName = '') {
     $name = $name ? "_$name" : '';
     $name = $time . $name;
 
-    $template = path("#elegance-datalayer/front/template/mx/migration.txt");
+    $template = path("#elegance-datalayer/view/template/mx/migration.txt");
 
     $data = [
         'time' => "$time",
