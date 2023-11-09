@@ -1,6 +1,9 @@
 <?php
 
-namespace Elegance;
+use Elegance\Core\File;
+use Elegance\Core\Import;
+use Elegance\Core\Terminal;
+use Elegance\Datalayer\Datalayer;
 
 // php mx create.migration
 

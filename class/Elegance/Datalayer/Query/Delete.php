@@ -2,8 +2,6 @@
 
 namespace Elegance\Datalayer\Query;
 
-use Elegance\Datalayer\Query;
-
 class Delete extends BaseQuery
 {
     protected int $limit = 0;

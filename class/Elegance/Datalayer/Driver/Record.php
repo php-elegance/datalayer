@@ -3,10 +3,10 @@
 namespace Elegance\Datalayer\Driver;
 
 use Elegance\Datalayer\Datalayer;
-use Elegance\Datalayer\Driver\Field\FIdx;
 use Elegance\Datalayer\Query;
-use Error;
+use Elegance\Datalayer\Driver\Field\FIdx;
 use Elegance\Datalayer\Driver\Field\FTime;
+use Error;
 
 /** 
  * @property int|null $id chave de identificação numerica do registro

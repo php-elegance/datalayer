@@ -17,7 +17,7 @@ namespace [#namespace]\Driver;
  * 
  * @method \[#namespace]\Record\Record[#tableClass][] _convert Converte um array de consula em um array de objetos de registro
  */
-abstract class DriverTable[#tableClass] extends \Elegance\Driver\Table
+abstract class DriverTable[#tableClass] extends \Elegance\Datalayer\Driver\Table
 {
     protected $DATALAYER = '[#datalayer]';
     protected $TABLE = '[#tableName]';

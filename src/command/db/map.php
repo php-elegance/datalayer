@@ -1,8 +1,9 @@
 <?php
 
-namespace Elegance;
-
 // php mx db.map
+
+use Elegance\Core\Terminal;
+use Elegance\Datalayer\Datalayer;
 
 return function ($dbName = 'main', $file = null) {
     $dbName = Datalayer::formatNameToDb($dbName);

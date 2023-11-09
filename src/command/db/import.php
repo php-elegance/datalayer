@@ -1,11 +1,10 @@
 <?php
 
-namespace Elegance;
-
-use Error;
-use Elegance\Datalayer\Query;
-
 // php mx db.import
+
+use Elegance\Core\Terminal;
+use Elegance\Datalayer\Datalayer;
+use Elegance\Datalayer\Query;
 
 return function ($ref = 'main', $useId = false) {
     $tables = explode('.', $ref);

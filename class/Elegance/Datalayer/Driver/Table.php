@@ -5,6 +5,7 @@ namespace Elegance\Datalayer\Driver;
 use Elegance\Core\Cif;
 use Elegance\Datalayer\Query;
 use Elegance\Datalayer\Query\Select;
+use Elegance\Datalayer\Driver\Record;
 use Error;
 
 abstract class Table

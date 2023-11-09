@@ -5,8 +5,8 @@ namespace Elegance\Datalayer\Terminal;
 use Elegance\Datalayer\Datalayer;
 use Elegance\Core\Dir;
 use Elegance\Core\File;
-use Elegance\Import;
-use Elegance\Terminal;
+use Elegance\Core\Import;
+use Elegance\Core\Terminal;
 use Error;
 
 trait TraitMigration

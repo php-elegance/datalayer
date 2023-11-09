@@ -2,7 +2,7 @@
 
 namespace Elegance\Datalayer\Driver\Field;
 
-use Elegance\Code;
+use Elegance\Core\Code;
 use Elegance\Datalayer\Driver\Field;
 
 /** Armazena um hash Code */

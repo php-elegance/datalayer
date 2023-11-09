@@ -1,10 +1,8 @@
 <?php
 
-namespace Elegance;
+// php mx migration.run
 
 use Elegance\Datalayer\Terminal\TraitMigration;
-
-// php mx migration.run
 
 return new class
 {
