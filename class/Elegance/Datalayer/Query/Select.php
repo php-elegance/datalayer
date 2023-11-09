@@ -84,11 +84,20 @@ class Select extends BaseQuery
     }
 
     /** Adiciona um WHERE ao select */
-    function where(): static
+    function where(...$args): static
     {
-        if (func_num_args()) {
-            $this->where[] = func_get_args();
+        if (count($args) == 2) {
+            if (is_array($args[1]))
+                return $this->whereIn(...$args);
+            if (is_bool($args[1])) {
+                $compare = $args[1] ? ' != ?' : ' = ?';
+                return $this->where("$args[0] $compare", 0);
+            }
         }
+
+        if (count($args))
+            $this->where[] = $args;
+
         return $this;
     }
 
@@ -99,11 +108,12 @@ class Select extends BaseQuery
             $ids = explode(',', $ids);
 
         $ids = array_filter($ids, fn ($id) => is_int($id));
+
+        if (!count($ids))
+            return $this->where('false');
+
         $ids = implode(',', $ids);
-
-        $this->where("$field in ($ids)");
-
-        return $this;
+        return $this->where("$field in ($ids)");
     }
 
     /** Adiciona um WHERE para ser utilizado na query verificando se um campo é nulo */

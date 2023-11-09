@@ -81,11 +81,12 @@ class Delete extends BaseQuery
             $ids = explode(',', $ids);
 
         $ids = array_filter($ids, fn ($id) => is_int($id));
+
+        if (!count($ids))
+            return $this->where('false');
+
         $ids = implode(',', $ids);
-
-        $this->where("$field in ($ids)");
-
-        return $this;
+        return $this->where("$field in ($ids)");
     }
 
     /** Adiciona um WHERE para ser utilizado na query verificando se um campo é nulo */
