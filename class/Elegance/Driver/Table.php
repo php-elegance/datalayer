@@ -9,10 +9,9 @@ use Error;
 
 abstract class Table
 {
-    protected $DATALAYER;
-    protected $TABLE;
-
-    protected $CLASS_RECORD;
+    public readonly string $DATALAYER;
+    public readonly string $TABLE;
+    public readonly string $CLASS_RECORD;
 
     protected array $CACHE = [];
     protected bool $CACHE_STATUS = true;
