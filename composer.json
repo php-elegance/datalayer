@@ -10,12 +10,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "": "class/"
+            "": "source/"
         },
         "files": [
-            "src/helper/function/idKey.php",
-            "src/helper/function/syncIds.php",
-            "src/helper/script/path.php"
+            "helper/function/idKey.php",
+            "helper/function/syncIds.php",
+            "helper/script/path.php"
         ]
     },
     "require": {
