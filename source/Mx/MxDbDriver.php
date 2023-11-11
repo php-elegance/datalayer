@@ -22,7 +22,7 @@ class MxDbDriver extends Mx
 
         $namespace = Datalayer::formatNameToDriverNamespace($dbName);
 
-        $path = path('class', $namespace);
+        $path = path('source', $namespace);
 
         $this->dbName = $dbName;
         $this->map = $map;
