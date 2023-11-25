@@ -91,6 +91,13 @@ abstract class Migration
         return new SchemeField($name, ['type' => 'text', 'comment' => $comment]);
     }
 
+
+    /** Retorna um objeto campo do tipo Json */
+    function _json(string $name, ?string $comment = null): SchemeField
+    {
+        return new SchemeField($name, ['type' => 'json', 'comment' => $comment]);
+    }
+
     /** Retorna um objeto campo do tipo Float */
     function _float(string $name, ?string $comment = null): SchemeField
     {

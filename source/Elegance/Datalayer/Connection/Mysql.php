@@ -173,6 +173,7 @@ class Mysql extends Connection
             case 'ids':
             case 'log':
             case 'text':
+            case 'json':
             case 'config':
                 $field['default'] = is_null($field['default']) ? '' : " DEFAULT '" . $field['default'] . "'";
                 $prepare = "`[#name]` text[#null] COMMENT '[#comment]'";

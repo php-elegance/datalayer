@@ -102,6 +102,12 @@ Retorna um objeto campo do tipo Text
 
     $this->_text($nomeDoCampo,$comentario)
 
+**_json**
+
+Retorna um objeto campo do tipo Float
+
+    $this->_json($nomeDoCampo,$comentario)
+
 **_float**
 
 Retorna um objeto campo do tipo Float

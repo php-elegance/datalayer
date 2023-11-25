@@ -143,6 +143,10 @@ class SchemeField
             case 'text':
                 break;
 
+            case 'json':
+                $map['default'] = $map['default'] ?? '[]';
+                break;
+
             case 'ids':
                 $map['size'] = null;
                 $map['null'] = false;

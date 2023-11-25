@@ -1,0 +1,57 @@
+{
+    "page": {
+        "comment": "Página",
+        "fields": {
+            "_created": {
+                "type": "time",
+                "comment": "smart control to create",
+                "size": 11,
+                "null": true,
+                "index": true,
+                "config": [],
+                "default": 0
+            },
+            "_updated": {
+                "type": "time",
+                "comment": "smart control to update",
+                "size": 11,
+                "null": true,
+                "index": true,
+                "config": [],
+                "default": 0
+            },
+            "_deleted": {
+                "type": "time",
+                "comment": "smart control to delete",
+                "size": 11,
+                "null": true,
+                "index": true,
+                "config": [],
+                "default": 0
+            },
+            "name": {
+                "type": "string",
+                "comment": "",
+                "size": 50,
+                "null": true,
+                "index": null,
+                "config": [],
+                "default": null
+            },
+            "content": {
+                "type": "json",
+                "comment": "",
+                "size": null,
+                "null": true,
+                "index": null,
+                "config": [],
+                "default": "[]"
+            }
+        },
+        "index": {
+            "_created": "page._created",
+            "_updated": "page._updated",
+            "_deleted": "page._deleted"
+        }
+    }
+}
