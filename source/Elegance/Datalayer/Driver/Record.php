@@ -272,7 +272,8 @@ abstract class Record
     final protected function __runCreate()
     {
         $this->__runSaveIdx();
-        if ($this->_onCreate() ?? true) {
+        $onCreate = $this->_onCreate();
+        if ($onCreate ?? true) {
             $this->FIELD['_created']->set(true);
 
             $this->ID = Query::insert($this->TABLE)
@@ -283,6 +284,9 @@ abstract class Record
             $tableClass = Datalayer::formatNameToMethod($this->TABLE);
 
             $drvierClass::${$tableClass}->__cacheSet($this->ID, $this);
+
+            if (is_closure($onCreate))
+                $onCreate($this);
         }
     }
 
@@ -291,7 +295,8 @@ abstract class Record
     {
         $this->__runSaveIdx();
         if ($forceUpdate || $this->_checkChange()) {
-            if ($this->_onUpdate() ?? true) {
+            $onUpdate = $this->_onUpdate();
+            if ($onUpdate ?? true) {
                 $dif = $this->_arrayInsert();
 
                 foreach ($dif as $name => $value)
@@ -305,6 +310,9 @@ abstract class Record
                     ->where('id', $this->ID)
                     ->values($dif)
                     ->run($this->DATALAYER);
+
+                if (is_closure($onUpdate))
+                    $onUpdate($this);
             }
         }
     }
@@ -315,7 +323,8 @@ abstract class Record
         $this->__runSaveIdx();
 
         if ($this->_checkChange()) {
-            if ($this->_onDelete() ?? true) {
+            $onDelete = $this->_onDelete();
+            if ($onDelete ?? true) {
                 $dif = $this->_arrayInsert();
 
                 foreach ($dif as $name => $value)
@@ -327,6 +336,9 @@ abstract class Record
                         ->where('id', $this->ID)
                         ->values($dif)
                         ->run($this->DATALAYER);
+
+                if (is_closure($onDelete))
+                    $onDelete($this);
             }
         }
     }
@@ -334,6 +346,7 @@ abstract class Record
     /** Executa o comando para remover o registro */
     final protected function __runHardDelete()
     {
+        $onHardDelete = $this->_onHardDelete();
         if ($this->_onHardDelete() ?? true) {
             Query::delete($this->TABLE)
                 ->where('id', $this->ID)
@@ -347,6 +360,9 @@ abstract class Record
             $tableClass = Datalayer::formatNameToMethod($this->TABLE);
 
             $drvierClass::${$tableClass}->__cacheRemove($oldId);
+
+            if (is_closure($onHardDelete))
+                $onHardDelete($this);
         }
     }
 
