@@ -16,8 +16,6 @@ class MxDbExport extends Mx
 
         $dbName = Datalayer::formatNameToDb($dbName);
 
-        $file = $file ?? $ref;
-
         $map = Datalayer::get($dbName)->getConfig('__dbMap') ?? [];
 
         $tables = array_shift($tables) ?? array_keys($map);
@@ -32,8 +30,8 @@ class MxDbExport extends Mx
             }
 
 
-        jsonFile("$file.json", $export);
+        jsonFile("db/$ref.json", $export);
 
-        self::echo("Dados do datalayer [$ref] exportado para [$file.json]");
+        self::echo("Dados do datalayer [$ref] exportado para [db/$ref.json]");
     }
 }

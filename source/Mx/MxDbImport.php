@@ -16,9 +16,7 @@ class MxDbImport extends Mx
 
         $dbName = Datalayer::formatNameToDb($dbName);
 
-        $file = $ref;
-
-        $fields = jsonFile("$file.json");
+        $fields = jsonFile("db/$ref.json");
 
         $tables = array_shift($tables) ?? array_keys($fields);
         $tables = is_array($tables) ? $tables : [$tables];
@@ -38,6 +36,6 @@ class MxDbImport extends Mx
 
         Datalayer::get($dbName)->executeQueryList($querys);
 
-        self::echo("Dados do datalayer [$ref] importado de [$file.json]");
+        self::echo("Dados do datalayer [$ref] importados de [db/$ref.json]");
     }
 }

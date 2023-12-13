@@ -14,7 +14,7 @@ class MxDbMap extends Mx
 
         $map = Datalayer::get($dbName)->getConfig('__dbMap') ?? [];
 
-        jsonFile($file, $map);
+        jsonFile("db/map__$file.json", $map);
 
         self::echo("Mapa do datalayer [$dbName] exportado para [$file.json]");
     }
